@@ -17,6 +17,10 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+/* A display rule on an element beats the hidden attribute, and several here
+   set one - flex list rows, grid cards. Make hidden mean hidden. */
+[hidden] { display: none !important; }
+
 html { scroll-behavior: smooth; }
 
 body {
