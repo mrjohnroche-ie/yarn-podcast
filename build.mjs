@@ -182,7 +182,7 @@ function footer(rel) {
       <div>
         <h2>Get in touch</h2>
         <ul class="footer-links">
-          <li><a href="mailto:${esc(site.email)}">${esc(site.email)}</a></li>
+          <li>Email: ${esc(site.emailDisplay)}</li>
           <li><a href="${esc(site.instagram)}" target="_blank" rel="noopener">@yarnstorypod on Instagram</a></li>
           <li><a href="${rel}extras/yarn-podcast-production/index.html">Podcast production services</a></li>
         </ul>
@@ -474,6 +474,7 @@ ${footer(rel)}`;
 if (existsSync(DIST)) await rm(DIST, { recursive: true });
 await mkdir(DIST, { recursive: true });
 await cp(path.join(ROOT, 'assets'), path.join(DIST, 'assets'), { recursive: true });
+await cp(path.join(ROOT, 'assets/favicon.ico'), path.join(DIST, 'favicon.ico'));
 await cp(path.join(ROOT, 'src/styles.css'), path.join(DIST, 'styles.css'));
 await cp(path.join(ROOT, 'src/app.js'), path.join(DIST, 'app.js'));
 

@@ -8,7 +8,6 @@
     "We've done a 3-part doc series on the history of disability, a 2-part docu-drama about a Nazi spy in Ireland during WW2. We've taken listeners on a trip around the Chernobyl exclusion zone, on a ride-along with a New York police officer and into the bizarre palace of a corrupt dictator.",
     "Produced and presented by John Roche in Dublin, Ireland since 2017."
   ],
-  "email": "yarnstorypodcast@gmail.com",
   "instagram": "https://www.instagram.com/yarnstorypod",
   "appleId": "1348286075",
   "platforms": [
@@ -90,5 +89,6 @@
   "awards": [
     "Signal Podcast Awards, Bronze 2025: Best indie podcast",
     "Irish Podcast Awards, Gold 2022: Best factual podcast"
-  ]
+  ],
+  "emailDisplay": "yarnstorypodcast (at) gmail.com"
 }
