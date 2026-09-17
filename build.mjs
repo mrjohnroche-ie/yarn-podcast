@@ -360,6 +360,13 @@ function episodePage(ep, prev, next, { rel, hrefBase }) {
         p.durationText ? `<span class="part-meta">${esc(p.durationText)}${p.date ? ' &middot; ' + esc(prettyDate(p.date)) : ''}</span>` : ''
       }</div>
       <div class="player">${spotifyEmbed(p.spotify, ep.title + ' - ' + p.label)}</div>
+      ${
+        p.transcript
+          ? `<a class="text-link" href="${esc(p.transcript)}" target="_blank" rel="noopener">${icon(
+              'link'
+            )}Full transcript</a>`
+          : ''
+      }
     </div>`
       )
       .join('\n    ');

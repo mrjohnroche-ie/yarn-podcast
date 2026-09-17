@@ -261,7 +261,8 @@
      "apple": 1000497689526,
      "date": "2020-11-08",
      "duration": "39:41",
-     "durationText": "40 min"
+     "durationText": "40 min",
+     "transcript": "https://mrjohnroche-42475.medium.com/disability-a-parallel-history-316bf348cfd2"
     },
     {
      "label": "Part 2: Two steps forward, one step back",
@@ -270,7 +271,8 @@
      "apple": 1000498701116,
      "date": "2020-11-15",
      "duration": "44:11",
-     "durationText": "44 min"
+     "durationText": "44 min",
+     "transcript": "https://mrjohnroche-42475.medium.com/disability-a-parallel-history-ad51c7673cdb"
     },
     {
      "label": "Part 3: Darkest before the dawn",
@@ -279,7 +281,8 @@
      "apple": 1000499778629,
      "date": "2020-11-22",
      "duration": "48:43",
-     "durationText": "49 min"
+     "durationText": "49 min",
+     "transcript": "https://mrjohnroche-42475.medium.com/disability-a-parallel-history-03-darkest-before-the-dawn-1b62d52a8e20"
     }
    ],
    "date": "2020-11-08",
@@ -312,7 +315,8 @@
      "apple": 1000476598864,
      "date": "2020-06-03",
      "duration": "39:36",
-     "durationText": "40 min"
+     "durationText": "40 min",
+     "transcript": "https://mrjohnroche-42475.medium.com/yarn-19-how-not-to-be-a-spy-a3b4fd48b17e"
     },
     {
      "label": "Part 2",
@@ -321,7 +325,8 @@
      "apple": 1000476598863,
      "date": "2020-06-03",
      "duration": "36:04",
-     "durationText": "36 min"
+     "durationText": "36 min",
+     "transcript": "https://mrjohnroche-42475.medium.com/yarn-19-how-not-to-be-a-spy-part-ii-9f4d39f14c0a"
     }
    ],
    "date": "2020-06-03",
@@ -367,7 +372,12 @@
    ],
    "credits": [],
    "art": "assets/art/17-chernobyl.jpg",
-   "links": [],
+   "links": [
+    {
+     "label": "Full transcript",
+     "url": "https://mrjohnroche-42475.medium.com/yarn-17-chernobyl-29f8616a8221"
+    }
+   ],
    "spotify": "7EsScq6le9crIXm7EPa8AY",
    "parts": [],
    "apple": 1000466035303,
@@ -410,7 +420,12 @@
    ],
    "credits": [],
    "art": "assets/art/15-blak-bisnis.jpg",
-   "links": [],
+   "links": [
+    {
+     "label": "Full transcript",
+     "url": "https://mrjohnroche-42475.medium.com/yarn-15-blak-bisnis-682db21ef576"
+    }
+   ],
    "spotify": "56pXkxmMeolkaK802MkXEV",
    "parts": [],
    "apple": 1000455463662,
@@ -769,7 +784,12 @@
     "Written and Narrated by John Roche"
    ],
    "art": "assets/art/01-the-absence-of-gary.jpg",
-   "links": [],
+   "links": [
+    {
+     "label": "Full transcript",
+     "url": "https://mrjohnroche-42475.medium.com/yarn-01-the-absence-of-gary-683fa308b160"
+    }
+   ],
    "spotify": "4uCXEYSeFEnB9efg2ciHqP",
    "parts": [],
    "apple": 1000402172290,
