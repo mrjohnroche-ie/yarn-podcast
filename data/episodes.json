@@ -28,7 +28,10 @@
    "apple": 1000705648397,
    "date": "2025-05-01",
    "duration": "01:11:44",
-   "durationText": "1h 12m"
+   "durationText": "1h 12m",
+   "tags": [
+    "travel"
+   ]
   },
   {
    "n": 28,
@@ -46,7 +49,10 @@
    "apple": 1000701956023,
    "date": "2025-04-02",
    "duration": "09:52",
-   "durationText": "10 min"
+   "durationText": "10 min",
+   "tags": [
+    "interview"
+   ]
   },
   {
    "n": 27,
@@ -69,7 +75,10 @@
    "apple": 1000638361853,
    "date": "2025-01-11",
    "duration": "42:54",
-   "durationText": "43 min"
+   "durationText": "43 min",
+   "tags": [
+    "history"
+   ]
   },
   {
    "n": 26,
@@ -93,7 +102,10 @@
    "apple": 1000611335405,
    "date": "2023-05-01",
    "duration": "50:05",
-   "durationText": "50 min"
+   "durationText": "50 min",
+   "tags": [
+    "sport"
+   ]
   },
   {
    "n": 25,
@@ -118,7 +130,11 @@
    "apple": 1000555979209,
    "date": "2022-03-30",
    "duration": "22:21",
-   "durationText": "22 min"
+   "durationText": "22 min",
+   "tags": [
+    "true-crime",
+    "interview"
+   ]
   },
   {
    "n": 24,
@@ -137,7 +153,10 @@
    "apple": 1000552643573,
    "date": "2022-03-02",
    "duration": "27:31",
-   "durationText": "28 min"
+   "durationText": "28 min",
+   "tags": [
+    "interview"
+   ]
   },
   {
    "n": 23,
@@ -155,7 +174,11 @@
    "apple": 1000538324127,
    "date": "2021-10-12",
    "duration": "01:28:59",
-   "durationText": "1h 29m"
+   "durationText": "1h 29m",
+   "tags": [
+    "law-and-order",
+    "interview"
+   ]
   },
   {
    "n": 22,
@@ -178,7 +201,10 @@
    "apple": 1000521746601,
    "date": "2021-05-14",
    "duration": "59:18",
-   "durationText": "59 min"
+   "durationText": "59 min",
+   "tags": [
+    "interview"
+   ]
   },
   {
    "n": 21,
@@ -203,7 +229,11 @@
    "apple": 1000519793522,
    "date": "2021-05-02",
    "duration": "23:04",
-   "durationText": "23 min"
+   "durationText": "23 min",
+   "tags": [
+    "travel",
+    "history"
+   ]
   },
   {
    "n": 20,
@@ -254,7 +284,11 @@
    ],
    "date": "2020-11-08",
    "duration": "2:12:35",
-   "durationText": "2h 13m"
+   "durationText": "2h 13m",
+   "tags": [
+    "mini-series",
+    "history"
+   ]
   },
   {
    "n": 19,
@@ -291,7 +325,12 @@
    ],
    "date": "2020-06-03",
    "duration": "1:15:40",
-   "durationText": "1h 16m"
+   "durationText": "1h 16m",
+   "tags": [
+    "mini-series",
+    "history",
+    "drama"
+   ]
   },
   {
    "n": 18,
@@ -309,7 +348,10 @@
    "apple": 1000471657051,
    "date": "2020-04-16",
    "duration": "32:12",
-   "durationText": "32 min"
+   "durationText": "32 min",
+   "tags": [
+    "interview"
+   ]
   },
   {
    "n": 17,
@@ -328,7 +370,11 @@
    "apple": 1000466035303,
    "date": "2020-02-18",
    "duration": "51:45",
-   "durationText": "52 min"
+   "durationText": "52 min",
+   "tags": [
+    "travel",
+    "history"
+   ]
   },
   {
    "n": 16,
@@ -346,7 +392,10 @@
    "apple": 1000460769624,
    "date": "2019-12-25",
    "duration": "40:17",
-   "durationText": "40 min"
+   "durationText": "40 min",
+   "tags": [
+    "law-and-order"
+   ]
   },
   {
    "n": 15,
@@ -364,7 +413,11 @@
    "apple": 1000455463662,
    "date": "2019-07-19",
    "duration": "48:26",
-   "durationText": "48 min"
+   "durationText": "48 min",
+   "tags": [
+    "history",
+    "true-crime"
+   ]
   },
   {
    "n": 14,
@@ -383,7 +436,10 @@
    "apple": 1000434970183,
    "date": "2019-04-15",
    "duration": "34:24",
-   "durationText": "34 min"
+   "durationText": "34 min",
+   "tags": [
+    "interview"
+   ]
   },
   {
    "n": 13,
@@ -409,7 +465,12 @@
    "apple": 1000431511859,
    "date": "2019-03-10",
    "duration": "38:14",
-   "durationText": "38 min"
+   "durationText": "38 min",
+   "tags": [
+    "drama",
+    "history",
+    "sport"
+   ]
   },
   {
    "n": 12,
@@ -438,7 +499,10 @@
    "apple": 1000417852244,
    "date": "2019-02-15",
    "duration": "13:01",
-   "durationText": "13 min"
+   "durationText": "13 min",
+   "tags": [
+    "drama"
+   ]
   },
   {
    "n": 11,
@@ -463,7 +527,10 @@
    "apple": 1000417417274,
    "date": "2018-08-08",
    "duration": "06:36",
-   "durationText": "7 min"
+   "durationText": "7 min",
+   "tags": [
+    "travel"
+   ]
   },
   {
    "n": 10,
@@ -483,7 +550,10 @@
    "apple": 1000416670762,
    "date": "2018-07-26",
    "duration": "07:26",
-   "durationText": "7 min"
+   "durationText": "7 min",
+   "tags": [
+    "drama"
+   ]
   },
   {
    "n": 9,
@@ -503,7 +573,10 @@
    "apple": 1000416104583,
    "date": "2018-07-18",
    "duration": "26:56",
-   "durationText": "27 min"
+   "durationText": "27 min",
+   "tags": [
+    "history"
+   ]
   },
   {
    "n": 8,
@@ -523,7 +596,11 @@
    "apple": 1000412479473,
    "date": "2018-05-29",
    "duration": "15:24",
-   "durationText": "15 min"
+   "durationText": "15 min",
+   "tags": [
+    "drama",
+    "true-crime"
+   ]
   },
   {
    "n": 7,
@@ -548,7 +625,10 @@
    "apple": 1000412026345,
    "date": "2018-05-21",
    "duration": "10:16",
-   "durationText": "10 min"
+   "durationText": "10 min",
+   "tags": [
+    "drama"
+   ]
   },
   {
    "n": 6,
@@ -566,7 +646,10 @@
    "spotify": null,
    "parts": [],
    "durationText": null,
-   "note": "This one is off the streaming platforms at the moment, so there's no player for it yet."
+   "note": "This one is off the streaming platforms at the moment, so there's no player for it yet.",
+   "tags": [
+    "history"
+   ]
   },
   {
    "n": 5,
@@ -592,7 +675,10 @@
    "apple": 1000402302535,
    "date": "2018-02-14",
    "duration": "19:10",
-   "durationText": "19 min"
+   "durationText": "19 min",
+   "tags": [
+    "drama"
+   ]
   },
   {
    "n": 4,
@@ -612,7 +698,10 @@
    "apple": 1000402172289,
    "date": "2018-02-09",
    "duration": "16:21",
-   "durationText": "16 min"
+   "durationText": "16 min",
+   "tags": [
+    "history"
+   ]
   },
   {
    "n": 3,
@@ -632,7 +721,10 @@
    "apple": 1000402172287,
    "date": "2017-12-05",
    "duration": "16:16",
-   "durationText": "16 min"
+   "durationText": "16 min",
+   "tags": [
+    "drama"
+   ]
   },
   {
    "n": 2,
@@ -652,7 +744,10 @@
    "apple": 1000402172288,
    "date": "2017-12-05",
    "duration": "10:15",
-   "durationText": "10 min"
+   "durationText": "10 min",
+   "tags": [
+    "drama"
+   ]
   },
   {
    "n": 1,
@@ -672,7 +767,10 @@
    "apple": 1000402172290,
    "date": "2017-12-04",
    "duration": "10:34",
-   "durationText": "11 min"
+   "durationText": "11 min",
+   "tags": [
+    "drama"
+   ]
   }
  ],
  "extras": [

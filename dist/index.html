@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="styles.css?v=9810d4f4">
+<link rel="stylesheet" href="styles.css?v=ffcb56c8">
 </head>
 <body>
 <header class="site-header site-header--over-hero">
@@ -55,19 +55,21 @@
     <div class="wrap">
       <div class="section-head">
         <h2 class="section-title">Episodes</h2>
-        <p class="section-note">29 stories, six seasons, newest first.</p>
+        <p class="section-note">29 stories, newest first. Pick a subject to narrow them down.</p>
       </div>
-      <div class="filters" role="group" aria-label="Filter episodes by season">
+      <div class="filters" role="group" aria-label="Filter episodes by subject">
       <button class="filter" type="button" data-filter="all" aria-pressed="true">All 29</button>
-      <button class="filter" type="button" data-filter="6" aria-pressed="false">Season 6</button>
-      <button class="filter" type="button" data-filter="5" aria-pressed="false">Season 5</button>
-      <button class="filter" type="button" data-filter="4" aria-pressed="false">Season 4</button>
-      <button class="filter" type="button" data-filter="3" aria-pressed="false">Season 3</button>
-      <button class="filter" type="button" data-filter="2" aria-pressed="false">Season 2</button>
-      <button class="filter" type="button" data-filter="1" aria-pressed="false">Season 1</button>
+      <button class="filter" type="button" data-filter="sport" aria-pressed="false">Sport <span class="filter-count">2</span></button>
+      <button class="filter" type="button" data-filter="history" aria-pressed="false">History <span class="filter-count">10</span></button>
+      <button class="filter" type="button" data-filter="drama" aria-pressed="false">Drama <span class="filter-count">10</span></button>
+      <button class="filter" type="button" data-filter="interview" aria-pressed="false">Interview <span class="filter-count">7</span></button>
+      <button class="filter" type="button" data-filter="mini-series" aria-pressed="false">Mini series <span class="filter-count">2</span></button>
+      <button class="filter" type="button" data-filter="travel" aria-pressed="false">Travel <span class="filter-count">4</span></button>
+      <button class="filter" type="button" data-filter="true-crime" aria-pressed="false">True crime <span class="filter-count">3</span></button>
+      <button class="filter" type="button" data-filter="law-and-order" aria-pressed="false">Law and order <span class="filter-count">2</span></button>
       </div>
       <ul class="grid" id="episode-grid">
-        <li class="card" data-season="6">
+        <li class="card" data-tags="travel">
   <a href="episodes/hotel-on-the-edge-of-europe/index.html">
     <div class="card-art">
       <img src="assets/thumb/29-hotel-on-the-edge-of-europe.jpg" alt="Cover art for Hotel on the edge of Europe" loading="lazy" width="460" height="460">
@@ -78,7 +80,7 @@
     <p class="card-blurb">I've been going to Inishbofin, with a group of friends every Easter for years.</p>
   </a>
 </li>
-        <li class="card" data-season="6">
+        <li class="card" data-tags="interview">
   <a href="episodes/judys-callers/index.html">
     <div class="card-art">
       <img src="assets/thumb/28-judys-callers.jpg" alt="Cover art for Judy’s Callers" loading="lazy" width="460" height="460">
@@ -89,7 +91,7 @@
     <p class="card-blurb">Lucy's grandmother Judy was a volunteer with the Samaritans for 30 years, on their phone line. She's always wanted to ask her about what it was like, being on the end of those calls but Samaritan volunteers swear to never talk to anyone about the details of their callers but there was one call that Judy was able to tell Lucy about, and you’ll hear why.</p>
   </a>
 </li>
-        <li class="card" data-season="6">
+        <li class="card" data-tags="history">
   <a href="episodes/escape-from-madrid/index.html">
     <div class="card-art">
       <img src="assets/thumb/27-escape-from-madrid.jpg" alt="Cover art for Escape from Madrid" loading="lazy" width="460" height="460">
@@ -100,7 +102,7 @@
     <p class="card-blurb">Pablo De Miguel tells the little known story of how Turkish diplomats saved the lives of 1,000 refugees during the Spanish Civil War’s longest siege. It involves espionage, international negotiations and murder but above all else it's a story about the fight for survival and the determination to get home.</p>
   </a>
 </li>
-        <li class="card" data-season="6">
+        <li class="card" data-tags="sport">
   <a href="episodes/the-highest-cyclist-in-the-world/index.html">
     <div class="card-art">
       <img src="assets/thumb/26-the-highest-cyclist-in-the-world.jpg" alt="Cover art for The Highest Cyclist in the World" loading="lazy" width="460" height="460">
@@ -111,7 +113,7 @@
     <p class="card-blurb">In 2007 the legendary Scottish track cyclist Sir Chris Hoy set out to break the 1km time trial world record. The record and then only sub one minute 1km time was set by Hoy's longtime rival- Arnaud Tournant. Hoy was determined to go sub one minute himself and even more determined to snatch the record away from the french cyclist.</p>
   </a>
 </li>
-        <li class="card" data-season="5">
+        <li class="card" data-tags="true-crime interview">
   <a href="episodes/the-stalker/index.html">
     <div class="card-art">
       <img src="assets/thumb/25-the-stalker.jpg" alt="Cover art for The Stalker" loading="lazy" width="460" height="460">
@@ -122,7 +124,7 @@
     <p class="card-blurb">&quot;I had no contact with this man. All I ever said was hello to him. It's stalking. And it builds and builds.&quot;</p>
   </a>
 </li>
-        <li class="card" data-season="5">
+        <li class="card" data-tags="interview">
   <a href="episodes/kyiv-calling/index.html">
     <div class="card-art">
       <img src="assets/thumb/24-kyiv-calling.jpg" alt="Cover art for Kyiv Calling" loading="lazy" width="460" height="460">
@@ -133,7 +135,7 @@
     <p class="card-blurb">It is Day 6 of the Russian invasion of Ukraine.</p>
   </a>
 </li>
-        <li class="card" data-season="5">
+        <li class="card" data-tags="law-and-order interview">
   <a href="episodes/ladies-and-gentlemen-of-the-jury/index.html">
     <div class="card-art">
       <img src="assets/thumb/23-ladies-and-gentlemen-of-the-jury.jpg" alt="Cover art for Ladies and Gentlemen of the Jury" loading="lazy" width="460" height="460">
@@ -144,7 +146,7 @@
     <p class="card-blurb">I wanted to see inside this secretive world and get a sense of what it feels like to serve. I talked to 7 former jurors about their 7 separate trials. I also talked to a practicing criminal law barrister for his thoughts on the jury system. We’ll explore the selection process, the characters in the courtroom and the atmosphere in the jury deliberation room. We’ll also do a deep dive into a few cases and hear them told from a juror's perspective in their own words.</p>
   </a>
 </li>
-        <li class="card" data-season="5">
+        <li class="card" data-tags="interview">
   <a href="episodes/lone-actor-terrorism/index.html">
     <div class="card-art">
       <img src="assets/thumb/22-lone-actor-terrorism.jpg" alt="Cover art for Lone Actor Terrorism" loading="lazy" width="460" height="460">
@@ -155,7 +157,7 @@
     <p class="card-blurb">We speak to Dr. Francis O’Connor, an expert on lone actor radicalisation. Dr. O’Connor and his colleagues have been funded by the EU Commission to research lone actor attacks. They have collected what they think is the largest dataset of lone actor attacks and attackers in the western world, dating from 1990 until the present.</p>
   </a>
 </li>
-        <li class="card" data-season="5">
+        <li class="card" data-tags="travel history">
   <a href="episodes/the-secret-palace/index.html">
     <div class="card-art">
       <img src="assets/thumb/21-the-secret-palace.jpg" alt="Cover art for The Secret Palace" loading="lazy" width="460" height="460">
@@ -166,7 +168,7 @@
     <p class="card-blurb">We visit the Mezhyhirya estate in Ukraine.</p>
   </a>
 </li>
-        <li class="card" data-season="4">
+        <li class="card" data-tags="mini-series history">
   <a href="episodes/disability-a-parallel-history/index.html">
     <div class="card-art">
       <img src="assets/thumb/20-disability-a-parallel-history.jpg" alt="Cover art for Disability: A Parallel History" loading="lazy" width="460" height="460">
@@ -177,7 +179,7 @@
     <p class="card-blurb">In this new Yarn Podcast Miniseries we’re going to give you a rough history of disability.</p>
   </a>
 </li>
-        <li class="card" data-season="3">
+        <li class="card" data-tags="mini-series history drama">
   <a href="episodes/how-not-to-be-a-spy/index.html">
     <div class="card-art">
       <img src="assets/thumb/19-how-not-to-be-a-spy.jpg" alt="Cover art for How Not to Be a Spy" loading="lazy" width="460" height="460">
@@ -188,7 +190,7 @@
     <p class="card-blurb">For our third season we focus on one story in this two part Docu-Drama. The true story of Hermann Goertz, the Nazi spy who landed in neutral Ireland during the Second World War, on a mission to meet the IRA and organise a German-led invasion of Northern Ireland.</p>
   </a>
 </li>
-        <li class="card" data-season="2">
+        <li class="card" data-tags="interview">
   <a href="episodes/stammer/index.html">
     <div class="card-art">
       <img src="assets/thumb/18-stammer.jpg" alt="Cover art for Stammer" loading="lazy" width="460" height="460">
@@ -199,7 +201,7 @@
     <p class="card-blurb">My friend Dermot has a stammer. He’s had one as long as I’ve known him. Like most people I didn’t take much notice of it. After all, everyone stumbles over words sometimes don’t they? Whats the big deal? I certainly didn’t think about what was happening behind the stammer. The thoughts, the anxiety and all the tricks being employed under the surface of what most would consider a minor blip in someone's speech. In this documentary Dermot tells us about the secret war he waged every time he spoke.</p>
   </a>
 </li>
-        <li class="card" data-season="2">
+        <li class="card" data-tags="travel history">
   <a href="episodes/chernobyl/index.html">
     <div class="card-art">
       <img src="assets/thumb/17-chernobyl.jpg" alt="Cover art for Chernobyl" loading="lazy" width="460" height="460">
@@ -210,7 +212,7 @@
     <p class="card-blurb">We spend two days exploring the Chernobyl exclusion zone and we stay overnight, in Chernobyl’s only functioning hotel.</p>
   </a>
 </li>
-        <li class="card" data-season="2">
+        <li class="card" data-tags="law-and-order">
   <a href="episodes/eyes-dont-lie/index.html">
     <div class="card-art">
       <img src="assets/thumb/16-eyes-dont-lie.jpg" alt="Cover art for Eyes Don't Lie" loading="lazy" width="460" height="460">
@@ -221,7 +223,7 @@
     <p class="card-blurb">On patrol with a drug recognition expert. We go on a ride along in New York State with a police officer who's specialty is to determine if drivers are impaired by drugs.</p>
   </a>
 </li>
-        <li class="card" data-season="2">
+        <li class="card" data-tags="history true-crime">
   <a href="episodes/blak-bisnis/index.html">
     <div class="card-art">
       <img src="assets/thumb/15-blak-bisnis.jpg" alt="Cover art for Blak Bisnis" loading="lazy" width="460" height="460">
@@ -232,7 +234,7 @@
     <p class="card-blurb">Modern piracy and the hijacking of the Petro Ranger. You probably don’t think of pirates as wearing expensive suits and working in high rise office buildings. In the 90’s the biggest pirates of South East Asia were impossible to tell apart from high powered business people. It was hard to tell them apart because they could be both. This is the true story of one of the most sophisticated pirate syndicates in South East Asia and its mythic leader Mister Wong.</p>
   </a>
 </li>
-        <li class="card" data-season="2">
+        <li class="card" data-tags="interview">
   <a href="episodes/billy/index.html">
     <div class="card-art">
       <img src="assets/thumb/14-billy.jpg" alt="Cover art for Billy" loading="lazy" width="460" height="460">
@@ -243,7 +245,7 @@
     <p class="card-blurb">&quot;I treated it like it was my best friend but in fact it was my worst enemy&quot;.</p>
   </a>
 </li>
-        <li class="card" data-season="1">
+        <li class="card" data-tags="drama history sport">
   <a href="episodes/the-boxer-and-the-bomber/index.html">
     <div class="card-art">
       <img src="assets/thumb/13-the-boxer-and-the-bomber.jpg" alt="Cover art for The Boxer and the Bomber" loading="lazy" width="460" height="460">
@@ -254,7 +256,7 @@
     <p class="card-blurb">An audio drama based on a true story.</p>
   </a>
 </li>
-        <li class="card" data-season="1">
+        <li class="card" data-tags="drama">
   <a href="episodes/chancin-me-arm/index.html">
     <div class="card-art">
       <img src="assets/thumb/12-chancin-me-arm.jpg" alt="Cover art for Chancin' Me Arm" loading="lazy" width="460" height="460">
@@ -265,7 +267,7 @@
     <p class="card-blurb">A dramatic monologue. Drinkin’, workin’, emigratin’ and boilin’ spuds in hot tar. The life of a chancer.</p>
   </a>
 </li>
-        <li class="card" data-season="1">
+        <li class="card" data-tags="travel">
   <a href="episodes/brick-lane/index.html">
     <div class="card-art">
       <img src="assets/thumb/11-brick-lane.jpg" alt="Cover art for Brick Lane" loading="lazy" width="460" height="460">
@@ -276,7 +278,7 @@
     <p class="card-blurb">Walk with the narrator on a six minute stroll down one of London's most famous streets. You'll meet its inhabitants and visitors, all to a thumping music beat.</p>
   </a>
 </li>
-        <li class="card" data-season="1">
+        <li class="card" data-tags="drama">
   <a href="episodes/oonagh-and-the-giant/index.html">
     <div class="card-art">
       <img src="assets/thumb/10-oonagh-and-the-giant.jpg" alt="Cover art for Oonagh and the Giant" loading="lazy" width="460" height="460">
@@ -287,7 +289,7 @@
     <p class="card-blurb">The Irish legend of how the Giant’s Causeway came to be. A mythic audio drama tale.</p>
   </a>
 </li>
-        <li class="card" data-season="1">
+        <li class="card" data-tags="history">
   <a href="episodes/cuban-missile-crisis/index.html">
     <div class="card-art">
       <img src="assets/thumb/09-cuban-missile-crisis.jpg" alt="Cover art for Cuban Missile Crisis" loading="lazy" width="460" height="460">
@@ -298,7 +300,7 @@
     <p class="card-blurb">October 1962. A bold move on the Cold War chessboard makes America very nervous. Russia installs nuclear missiles in revolutionary Cuba and points them directly at the US. Life as we know it becomes increasingly precarious as communication between Moscow and Washington breaks down. Meanwhile, naval personnel on the Caribbean seas sense they have their finger on far more than a trigger. Yarn 09 is the story of the Cuban Missile Crisis. We explore the ideological and technological that created history's most dangerous moment and ask who the heroes really were?</p>
   </a>
 </li>
-        <li class="card" data-season="1">
+        <li class="card" data-tags="drama true-crime">
   <a href="episodes/wild-night/index.html">
     <div class="card-art">
       <img src="assets/thumb/08-wild-night.jpg" alt="Cover art for Wild Night" loading="lazy" width="460" height="460">
@@ -309,7 +311,7 @@
     <p class="card-blurb">A night out to the pub in rural Ireland leads to gossip and ends in murder. A true crime audio drama.</p>
   </a>
 </li>
-        <li class="card" data-season="1">
+        <li class="card" data-tags="drama">
   <a href="episodes/every-second-saturday/index.html">
     <div class="card-art">
       <img src="assets/thumb/07-every-second-saturday.jpg" alt="Cover art for Every Second Saturday" loading="lazy" width="460" height="460">
@@ -320,7 +322,7 @@
     <p class="card-blurb">An emotional short story about the effect divorce and shared custody has on children and parents.</p>
   </a>
 </li>
-        <li class="card" data-season="1">
+        <li class="card" data-tags="history">
   <a href="episodes/anthem/index.html">
     <div class="card-art">
       <img src="assets/thumb/06-anthem.jpg" alt="Cover art for Anthem" loading="lazy" width="460" height="460">
@@ -331,7 +333,7 @@
     <p class="card-blurb">The melody of nations Respected and revered, the national anthem is a country's musical tribute to itself. But in a world so splintered, are songs invoking God, love of country and bloody slaughter the ones we need to be singing? Yarn 06 is melodic journey through some of the world's most famous national anthems. On the way, we get up close and personal with the triumphant tribalism at the heart of a nation's sense of self.</p>
   </a>
 </li>
-        <li class="card" data-season="1">
+        <li class="card" data-tags="drama">
   <a href="episodes/lefty/index.html">
     <div class="card-art">
       <img src="assets/thumb/05-lefty.jpg" alt="Cover art for Lefty" loading="lazy" width="460" height="460">
@@ -342,7 +344,7 @@
     <p class="card-blurb">When you think one of  your legs is possessed. I have cerebral palsy. It mainly affects my left leg. Lefty tries to disrupt my life whenever possible, especially in public or in sensitive situations. Eventually, enough is enough and my doctors come up with an unusual plan to pacify Lefty but he's not going to like it.</p>
   </a>
 </li>
-        <li class="card" data-season="1">
+        <li class="card" data-tags="history">
   <a href="episodes/the-siren/index.html">
     <div class="card-art">
       <img src="assets/thumb/04-the-siren.jpg" alt="Cover art for The Siren" loading="lazy" width="460" height="460">
@@ -353,7 +355,7 @@
     <p class="card-blurb">An accidental sounding of the Civil Defence Siren causes one concerned citizen to get a little too concerned. What results is a haphazard journey through childhood fears and the history of hysteria in a sleepy Irish town. Featuring medieval witchcraft, military history and Ireland's preparations for the end of all things.</p>
   </a>
 </li>
-        <li class="card" data-season="1">
+        <li class="card" data-tags="drama">
   <a href="episodes/not-exactly-legal/index.html">
     <div class="card-art">
       <img src="assets/thumb/03-not-exactly-legal.jpg" alt="Cover art for Not Exactly Legal" loading="lazy" width="460" height="460">
@@ -364,7 +366,7 @@
     <p class="card-blurb">When you think your housemate might be a fugitive. An autobiographical audio drama.</p>
   </a>
 </li>
-        <li class="card" data-season="1">
+        <li class="card" data-tags="drama">
   <a href="episodes/how-to-dismantle-a-porn-bomb/index.html">
     <div class="card-art">
       <img src="assets/thumb/02-how-to-dismantle-a-porn-bomb.jpg" alt="Cover art for How to Dismantle a Porn Bomb" loading="lazy" width="460" height="460">
@@ -375,7 +377,7 @@
     <p class="card-blurb">Having access to a car when you’re a teenager has its upsides and its downsides. An autobiographical audio drama</p>
   </a>
 </li>
-        <li class="card" data-season="1">
+        <li class="card" data-tags="drama">
   <a href="episodes/the-absence-of-gary/index.html">
     <div class="card-art">
       <img src="assets/thumb/01-the-absence-of-gary.jpg" alt="Cover art for The Absence of Gary" loading="lazy" width="460" height="460">
@@ -387,7 +389,7 @@
   </a>
 </li>
       </ul>
-      <p class="grid-empty" id="grid-empty" hidden>No episodes in that season.</p>
+      <p class="grid-empty" id="grid-empty" hidden>Nothing under that heading yet.</p>
     </div>
   </section>
 
@@ -398,7 +400,7 @@
         <p class="section-note">A motion comic, a walking tour of Kilkenny, a radio show, the documentary club, Doc Radar, press coverage and podcast production.</p>
       </div>
       <ul class="grid" style="margin-top:26px">
-        <li class="card" data-season="extras">
+        <li class="card" data-tags="extras">
   <a href="extras/yarn-podcast-production/index.html">
     <div class="card-art">
       <img src="assets/thumb/yarn-podcast-production.jpg" alt="Cover art for Yarn Podcast Production" loading="lazy" width="460" height="460">
@@ -409,7 +411,7 @@
     <p class="card-blurb">Looking to create a podcast that captivates listeners? Whether it's a personal project or a commercial production, I offer expert podcast production services to bring your vision to life — crafted by the award-winning producer of Yarn, winner of Best Factual Podcast at the Irish Podcast Awards.</p>
   </a>
 </li>
-        <li class="card" data-season="extras">
+        <li class="card" data-tags="extras">
   <a href="extras/thread-radio/index.html">
     <div class="card-art">
       <img src="assets/thumb/thread-radio.jpg" alt="Cover art for Thread Radio" loading="lazy" width="460" height="460">
@@ -420,7 +422,7 @@
     <p class="card-blurb">From the makers of the Yarn story podcast comes this radio show. Dedicated to recommending podcasts, movies, documentaries, YouTube channels, music.. basically anything that makes a sound.</p>
   </a>
 </li>
-        <li class="card" data-season="extras">
+        <li class="card" data-tags="extras">
   <a href="extras/audio-walking-tour/index.html">
     <div class="card-art">
       <img src="assets/thumb/audio-walking-tour.jpg" alt="Cover art for Audio Walking tour" loading="lazy" width="460" height="460">
@@ -431,7 +433,7 @@
     <p class="card-blurb">Discover Kilkenny’s Epic History on Your Own Terms! This self-guided audio walking tour is the perfect way to explore The Marble City.</p>
   </a>
 </li>
-        <li class="card" data-season="extras">
+        <li class="card" data-tags="extras">
   <a href="extras/lefty-motion-comic/index.html">
     <div class="card-art">
       <img src="assets/thumb/lefty-motion-comic.jpg" alt="Cover art for Lefty: The Motion Comic" loading="lazy" width="460" height="460">
@@ -442,7 +444,7 @@
     <p class="card-blurb">An animated comic book version of Yarn 05, Lefty, the story of a left leg with a mind of its own.</p>
   </a>
 </li>
-        <li class="card" data-season="extras">
+        <li class="card" data-tags="extras">
   <a href="extras/press/index.html">
     <div class="card-art">
       <img src="assets/thumb/press.jpg" alt="Cover art for Press" loading="lazy" width="460" height="460">
@@ -453,7 +455,7 @@
     <p class="card-blurb">Reviews, features and awards, from The Guardian to the Irish Examiner.</p>
   </a>
 </li>
-        <li class="card" data-season="extras">
+        <li class="card" data-tags="extras">
   <a href="documentary-club/index.html">
     <div class="card-art">
       <img src="assets/thumb/documentary-club.jpg" alt="Cover art for Yarn Documentary Club" loading="lazy" width="460" height="460">
@@ -464,7 +466,7 @@
     <p class="card-blurb">A personal list of the best documentaries made since 1985, 448 of them, grouped into 61 themes and rated out of three.</p>
   </a>
 </li>
-        <li class="card" data-season="extras">
+        <li class="card" data-tags="extras">
   <a href="https://doc-radar-weld.vercel.app/" target="_blank" rel="noopener">
     <div class="card-art">
       <img src="assets/thumb/doc-radar.jpg" alt="Cover art for Doc Radar" loading="lazy" width="460" height="460">
@@ -528,6 +530,6 @@
     </div>
   </div>
 </footer>
-<script src="app.js?v=9810d4f4" defer></script>
+<script src="app.js?v=ffcb56c8" defer></script>
 </body>
 </html>

@@ -31,7 +31,8 @@
     var apply = function (value) {
       var shown = 0;
       cards.forEach(function (card) {
-        var match = value === 'all' || card.dataset.season === value;
+        var tags = (card.dataset.tags || '').split(' ');
+        var match = value === 'all' || tags.indexOf(value) !== -1;
         card.hidden = !match;
         if (match) shown++;
       });
@@ -39,7 +40,7 @@
       filters.forEach(function (btn) {
         btn.setAttribute('aria-pressed', String(btn.dataset.filter === value));
       });
-      history.replaceState(null, '', value === 'all' ? location.pathname + '#episodes' : '#season-' + value);
+      history.replaceState(null, '', value === 'all' ? location.pathname + '#episodes' : '#' + value);
     };
 
     filters.forEach(function (btn) {
@@ -48,8 +49,9 @@
       });
     });
 
-    var season = location.hash.match(/^#season-(\w+)$/);
-    if (season) apply(season[1]);
+    /* Deep links like /#true-crime open on that subject. */
+    var wanted = location.hash.replace('#', '');
+    if (wanted && grid.querySelector('[data-tags~="' + wanted + '"]')) apply(wanted);
   }
 
   /* ---- old Squarespace anchors ----------------------------------------- */

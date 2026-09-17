@@ -238,7 +238,7 @@ function card(ep, rel, hrefBase) {
       ? ep.href
       : `${rel}${ep.href}`
     : `${rel}${hrefBase}/${ep.slug}/index.html`;
-  return `<li class="card" data-season="${ep.season || 'extras'}">
+  return `<li class="card" data-tags="${(ep.tags || ['extras']).join(' ')}">
   <a href="${href}"${external ? ' target="_blank" rel="noopener"' : ''}>
     <div class="card-art">
       <img src="${rel}${ep.art.replace('assets/art/', 'assets/thumb/')}" alt="Cover art for ${esc(
@@ -260,10 +260,18 @@ function card(ep, rel, hrefBase) {
 /* ---- landing page ---------------------------------------------------- */
 
 function landing() {
-  const seasons = [...new Set(episodes.map((e) => e.season))].sort((a, b) => b - a);
+  const counts = {};
+  for (const e of episodes) for (const t of e.tags || []) counts[t] = (counts[t] || 0) + 1;
   const filters = [
     `<button class="filter" type="button" data-filter="all" aria-pressed="true">All ${episodes.length}</button>`,
-    ...seasons.map((s) => `<button class="filter" type="button" data-filter="${s}" aria-pressed="false">Season ${s}</button>`),
+    ...site.tags
+      .filter((t) => counts[t.slug])
+      .map(
+        (t) =>
+          `<button class="filter" type="button" data-filter="${t.slug}" aria-pressed="false">${esc(
+            t.label
+          )} <span class="filter-count">${counts[t.slug]}</span></button>`
+      ),
   ].join('\n      ');
 
   return `${head({
@@ -293,15 +301,15 @@ ${header('', true)}
     <div class="wrap">
       <div class="section-head">
         <h2 class="section-title">Episodes</h2>
-        <p class="section-note">${episodes.length} stories, six seasons, newest first.</p>
+        <p class="section-note">${episodes.length} stories, newest first. Pick a subject to narrow them down.</p>
       </div>
-      <div class="filters" role="group" aria-label="Filter episodes by season">
+      <div class="filters" role="group" aria-label="Filter episodes by subject">
       ${filters}
       </div>
       <ul class="grid" id="episode-grid">
         ${episodes.map((e) => card(e, '', 'episodes')).join('\n        ')}
       </ul>
-      <p class="grid-empty" id="grid-empty" hidden>No episodes in that season.</p>
+      <p class="grid-empty" id="grid-empty" hidden>Nothing under that heading yet.</p>
     </div>
   </section>
 

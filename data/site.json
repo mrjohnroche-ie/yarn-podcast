@@ -92,5 +92,39 @@
     "Signal Podcast Awards, Bronze 2025: Best indie podcast",
     "Irish Podcast Awards, Gold 2022: Best factual podcast"
   ],
-  "emailDisplay": "yarnstorypodcast (at) gmail.com"
+  "emailDisplay": "yarnstorypodcast (at) gmail.com",
+  "tags": [
+    {
+      "slug": "sport",
+      "label": "Sport"
+    },
+    {
+      "slug": "history",
+      "label": "History"
+    },
+    {
+      "slug": "drama",
+      "label": "Drama"
+    },
+    {
+      "slug": "interview",
+      "label": "Interview"
+    },
+    {
+      "slug": "mini-series",
+      "label": "Mini series"
+    },
+    {
+      "slug": "travel",
+      "label": "Travel"
+    },
+    {
+      "slug": "true-crime",
+      "label": "True crime"
+    },
+    {
+      "slug": "law-and-order",
+      "label": "Law and order"
+    }
+  ]
 }

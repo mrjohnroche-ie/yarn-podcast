@@ -881,3 +881,9 @@ a { color: inherit; }
 }
 
 .doc-films a:hover { color: var(--violet-lit); border-bottom-color: var(--violet-lit); }
+
+.filter-count {
+  opacity: 0.55;
+  font-size: 0.85em;
+  margin-left: 2px;
+}
