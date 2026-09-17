@@ -887,3 +887,47 @@ a { color: inherit; }
   font-size: 0.85em;
   margin-left: 2px;
 }
+
+/* ---- more like this --------------------------------------------------- */
+
+.related {
+  padding-top: 26px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.related .grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); }
+
+/* ---- documentary club: search ---------------------------------------- */
+
+.doc-search { margin: 30px 0 4px; max-width: 68ch; }
+
+.doc-search input {
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--panel-line);
+  background: var(--panel);
+  color: var(--paper);
+  font-family: var(--font-body);
+  font-size: 15px;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.doc-search input::placeholder { color: var(--muted); }
+
+.doc-search input:focus {
+  outline: none;
+  border-color: rgba(143,129,255,0.6);
+  background: rgba(143,129,255,0.08);
+}
+
+.doc-search-status {
+  margin: 10px 2px 0;
+  min-height: 1.2em;
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--violet-lit);
+}

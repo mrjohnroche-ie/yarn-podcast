@@ -95,6 +95,10 @@
   "emailDisplay": "yarnstorypodcast (at) gmail.com",
   "tags": [
     {
+      "slug": "award-winning",
+      "label": "Award winning"
+    },
+    {
       "slug": "sport",
       "label": "Sport"
     },

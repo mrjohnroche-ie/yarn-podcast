@@ -78,6 +78,65 @@
     'new-page': 'episodes/the-absence-of-gary/'
   };
 
-  var target = LEGACY[location.hash.replace('#', '')];
+  /* Only from the landing page: the paths above are relative to the root. */
+  var target = grid && LEGACY[location.hash.replace('#', '')];
   if (target) location.replace(target);
+})();
+
+/* ---- documentary club: filter as you type ----------------------------- */
+(function () {
+  var input = document.getElementById('doc-search-input');
+  if (!input) return;
+
+  var status = document.getElementById('doc-search-status');
+  var sections = [].slice.call(document.querySelectorAll('.doc-section'));
+  var index = document.querySelector('.doc-index');
+
+  var entries = sections.map(function (section) {
+    var films = [].slice.call(section.querySelectorAll('.doc-films li')).map(function (li) {
+      return { li: li, text: li.textContent.toLowerCase() };
+    });
+    return { section: section, theme: section.querySelector('h2').textContent.toLowerCase(), films: films };
+  });
+
+  var total = entries.reduce(function (n, e) { return n + e.films.length; }, 0);
+
+  function run(raw) {
+    var q = raw.trim().toLowerCase();
+    if (!q) {
+      entries.forEach(function (entry) {
+        entry.section.hidden = false;
+        entry.films.forEach(function (f) { f.li.hidden = false; });
+      });
+      if (index) index.hidden = false;
+      if (status) status.textContent = '';
+      return;
+    }
+
+    var shown = 0;
+    entries.forEach(function (entry) {
+      /* A theme name match keeps the whole section, so "war" finds the war ones. */
+      var themeHit = entry.theme.indexOf(q) !== -1;
+      var hits = 0;
+      entry.films.forEach(function (f) {
+        var match = themeHit || f.text.indexOf(q) !== -1;
+        f.li.hidden = !match;
+        if (match) hits++;
+      });
+      entry.section.hidden = hits === 0;
+      shown += hits;
+    });
+
+    if (index) index.hidden = true;
+    if (status) {
+      status.textContent = shown
+        ? shown + (shown === 1 ? ' documentary' : ' documentaries') + ' of ' + total
+        : 'Nothing matches "' + raw.trim() + '"';
+    }
+  }
+
+  input.addEventListener('input', function () { run(input.value); });
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { input.value = ''; run(''); }
+  });
 })();

@@ -225,6 +225,7 @@ function footer(rel) {
     </div>
   </div>
 </footer>
+<script src="${rel}app.js?v=${stamp}" defer></script>
 </body>
 </html>`;
 }
@@ -334,10 +335,27 @@ ${header('', true)}
     </div>
   </section>
 </main>
-${footer('')}`.replace('</body>', `<script src="app.js?v=${stamp}" defer></script>\n</body>`);
+${footer('')}`;
 }
 
 /* ---- episode page ---------------------------------------------------- */
+
+/* Three episodes sharing the most subjects with this one. Format tags do not
+   count - short form is not a reason to recommend something - and where an
+   episode has too few neighbours the nearest by number fill the row. */
+const FORMAT_TAGS = new Set(['short-form', 'award-winning']);
+
+function relatedTo(ep) {
+  const subjects = (ep.tags || []).filter((t) => !FORMAT_TAGS.has(t));
+  const scored = episodes
+    .filter((e) => e.n !== ep.n)
+    .map((e) => ({
+      e,
+      shared: (e.tags || []).filter((t) => !FORMAT_TAGS.has(t) && subjects.includes(t)).length,
+    }))
+    .sort((a, b) => b.shared - a.shared || Math.abs(a.e.n - ep.n) - Math.abs(b.e.n - ep.n));
+  return scored.slice(0, 3).map((x) => x.e);
+}
 
 function episodePage(ep, prev, next, { rel, hrefBase }) {
   const eyebrow = [];
@@ -395,21 +413,15 @@ function episodePage(ep, prev, next, { rel, hrefBase }) {
     ? `<ul class="episode-credits">${ep.credits.map((c) => `<li>${esc(c)}</li>`).join('')}</ul>`
     : '';
 
-  const pager =
-    prev || next
-      ? `<nav class="pager" aria-label="Episodes">
-    ${
-      prev
-        ? `<a href="${rel}${hrefBase}/${prev.slug}/index.html"><span class="pager-label">&larr; Previous</span><span class="pager-title">${esc(prev.title)}</span></a>`
-        : '<span></span>'
-    }
-    ${
-      next
-        ? `<a class="next" href="${rel}${hrefBase}/${next.slug}/index.html"><span class="pager-label">Next &rarr;</span><span class="pager-title">${esc(next.title)}</span></a>`
-        : '<span></span>'
-    }
-  </nav>`
-      : '';
+  const related = ep.n ? relatedTo(ep) : [];
+  const pager = related.length
+    ? `<section class="section related">
+    <div class="section-head"><h2 class="section-title">More like this</h2></div>
+    <ul class="grid">
+      ${related.map((e) => card(e, rel, 'episodes')).join('\n      ')}
+    </ul>
+  </section>`
+    : '';
 
   const description = (ep.description && ep.description[0]) || site.intro;
   const isSeries = Boolean(ep.parts && ep.parts.length);
@@ -536,6 +548,11 @@ ${header(rel)}
       ${docClub.intro.map((p) => `<p>${linkify(p).replace(/\n/g, '<br>')}</p>`).join('\n      ')}
     </div>
     <p class="doc-count">${count} documentaries in ${docClub.sections.length} themes. Ratings are one to three stars, and everything listed is worth a watch.</p>
+    <div class="doc-search">
+      <label class="visually-hidden" for="doc-search-input">Search the documentaries</label>
+      <input id="doc-search-input" type="search" placeholder="Search ${count} documentaries by title, year or theme" autocomplete="off" spellcheck="false">
+      <p class="doc-search-status" id="doc-search-status" role="status" aria-live="polite"></p>
+    </div>
     <nav class="doc-index" aria-label="Themes">
       <h2>Themes</h2>
       <ul>
