@@ -8,17 +8,87 @@
     "We've done a 3-part doc series on the history of disability, a 2-part docu-drama about a Nazi spy in Ireland during WW2. We've taken listeners on a trip around the Chernobyl exclusion zone, on a ride-along with a New York police officer and into the bizarre palace of a corrupt dictator.",
     "Produced and presented by John Roche in Dublin, Ireland since 2017."
   ],
-  "award": "Signal Podcast Awards, Winner 2025: Best indie podcast (Bronze)",
   "email": "yarnstorypodcast@gmail.com",
   "instagram": "https://www.instagram.com/yarnstorypod",
   "appleId": "1348286075",
   "platforms": [
-    { "id": "apple", "name": "Apple Podcasts", "url": "https://podcasts.apple.com/ie/podcast/yarn-a-story-podcast/id1348286075?mt=2" },
-    { "id": "spotify", "name": "Spotify", "url": "https://open.spotify.com/show/5e0iwnIFXraz6GfIce8glP" },
-    { "id": "pocketcasts", "name": "Pocket Casts", "url": "https://pca.st/qlqnpebq" },
-    { "id": "overcast", "name": "Overcast", "url": "https://overcast.fm/itunes1348286075/yarn-a-story-podcast" },
-    { "id": "youtube", "name": "YouTube Music", "url": "https://music.youtube.com/playlist?list=PLk3FiCegjjy8iKLvFBSEBikogQj_c9WNF" },
-    { "id": "rss", "name": "RSS feed", "url": "https://anchor.fm/s/2941872c/podcast/rss" },
-    { "id": "more", "name": "More platforms", "url": "https://pod.link/1348286075" }
+    {
+      "id": "apple",
+      "name": "Apple Podcasts",
+      "url": "https://podcasts.apple.com/ie/podcast/yarn-a-story-podcast/id1348286075?mt=2"
+    },
+    {
+      "id": "spotify",
+      "name": "Spotify",
+      "url": "https://open.spotify.com/show/5e0iwnIFXraz6GfIce8glP"
+    },
+    {
+      "id": "pocketcasts",
+      "name": "Pocket Casts",
+      "url": "https://pca.st/qlqnpebq"
+    },
+    {
+      "id": "overcast",
+      "name": "Overcast",
+      "url": "https://overcast.fm/itunes1348286075/yarn-a-story-podcast"
+    },
+    {
+      "id": "youtube",
+      "name": "YouTube Music",
+      "url": "https://music.youtube.com/playlist?list=PLk3FiCegjjy8iKLvFBSEBikogQj_c9WNF"
+    },
+    {
+      "id": "rss",
+      "name": "RSS feed",
+      "url": "https://anchor.fm/s/2941872c/podcast/rss"
+    },
+    {
+      "id": "more",
+      "name": "More platforms",
+      "url": "https://pod.link/1348286075"
+    }
+  ],
+  "seasons": [
+    {
+      "n": 1,
+      "slug": "season-1",
+      "title": "Season 1",
+      "blurb": "Thirteen short stories: autobiographical audio dramas, myth, history and a murder in rural Ireland."
+    },
+    {
+      "n": 2,
+      "slug": "season-2",
+      "title": "Season 2",
+      "blurb": "Five documentaries, from an interview with a sober alcoholic to two days inside the Chernobyl exclusion zone."
+    },
+    {
+      "n": 3,
+      "slug": "season-3",
+      "title": "Season 3",
+      "blurb": "One story in two parts: the true, ridiculous mission of the Nazi spy who parachuted into neutral Ireland."
+    },
+    {
+      "n": 4,
+      "slug": "disability-a-parallel-history",
+      "title": "Season 4",
+      "blurb": "A three-part miniseries on the history of disability, told in parallel with the history of everyone else."
+    },
+    {
+      "n": 5,
+      "slug": "season-5",
+      "title": "Season 5",
+      "blurb": "Five documentaries: a palace built on corruption, lone actor terrorism, the jury room, Kyiv under invasion and a stalker."
+    },
+    {
+      "n": 6,
+      "slug": "season-06",
+      "title": "Season 6",
+      "blurb": "Four documentaries, including the Signal Award winning Hotel on the Edge of Europe."
+    }
+  ],
+  "extrasBlurb": "Side projects, a walking tour of Kilkenny, a radio show and podcast production services.",
+  "awards": [
+    "Signal Podcast Awards, Bronze 2025: Best indie podcast",
+    "Irish Podcast Awards, Gold 2022: Best factual podcast"
   ]
 }

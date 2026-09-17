@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.yarnpodcast.com/</loc></url>
+  <url><loc>https://www.yarnpodcast.com/season-1/</loc></url>
+  <url><loc>https://www.yarnpodcast.com/season-2/</loc></url>
+  <url><loc>https://www.yarnpodcast.com/season-3/</loc></url>
+  <url><loc>https://www.yarnpodcast.com/disability-a-parallel-history/</loc></url>
+  <url><loc>https://www.yarnpodcast.com/season-5/</loc></url>
+  <url><loc>https://www.yarnpodcast.com/season-06/</loc></url>
+  <url><loc>https://www.yarnpodcast.com/extras/</loc></url>
   <url><loc>https://www.yarnpodcast.com/episodes/hotel-on-the-edge-of-europe/</loc></url>
   <url><loc>https://www.yarnpodcast.com/episodes/judys-callers/</loc></url>
   <url><loc>https://www.yarnpodcast.com/episodes/escape-from-madrid/</loc></url>
@@ -33,4 +40,5 @@
   <url><loc>https://www.yarnpodcast.com/extras/yarn-podcast-production/</loc></url>
   <url><loc>https://www.yarnpodcast.com/extras/thread-radio/</loc></url>
   <url><loc>https://www.yarnpodcast.com/extras/audio-walking-tour/</loc></url>
+  <url><loc>https://www.yarnpodcast.com/documentary-club/</loc></url>
 </urlset>

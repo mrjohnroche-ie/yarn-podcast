@@ -11,6 +11,7 @@
 
 import { readFile, writeFile, mkdir, rm, cp } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -19,8 +20,23 @@ const DIST = path.join(ROOT, 'dist');
 
 const site = JSON.parse(await readFile(path.join(ROOT, 'data/site.json'), 'utf8'));
 const data = JSON.parse(await readFile(path.join(ROOT, 'data/episodes.json'), 'utf8'));
+const docClub = JSON.parse(await readFile(path.join(ROOT, 'data/doc-club.json'), 'utf8'));
 const episodes = data.episodes;
 const extras = data.extras;
+const seasons = site.seasons;
+
+/* The Squarespace site this replaces put every season on its own page, and the
+   URLs are in the wild - they stay exactly as they were, season 4 and 6 spelling
+   included. Anything else that used to resolve is redirected in vercel.json. */
+const seasonOf = (n) => seasons.find((s) => s.n === n);
+
+/* The stylesheet and the script are cached hard at the edge, so their URLs
+   carry a hash of their contents: a deploy that changes them changes the URL. */
+const stamp = createHash('sha1')
+  .update(await readFile(path.join(ROOT, 'src/styles.css')))
+  .update(await readFile(path.join(ROOT, 'src/app.js')))
+  .digest('hex')
+  .slice(0, 8);
 
 /* ---- helpers --------------------------------------------------------- */
 
@@ -104,7 +120,7 @@ function head({ title, description, rel, canonical, image, ogType = 'website' })
 <meta name="description" content="${esc(description)}">
 <meta name="theme-color" content="#08061c">
 <link rel="canonical" href="${esc(canonical)}">
-<link rel="icon" href="${rel}assets/favicon.png" type="image/png">
+<link rel="icon" href="${rel}assets/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="${rel}assets/favicon.png">
 <meta property="og:site_name" content="Yarn | A Story Podcast">
 <meta property="og:type" content="${ogType}">
@@ -116,13 +132,13 @@ function head({ title, description, rel, canonical, image, ogType = 'website' })
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="${rel}styles.css">
+<link rel="stylesheet" href="${rel}styles.css?v=${stamp}">
 </head>
 <body>`;
 }
 
-function header(rel) {
-  return `<header class="site-header">
+function header(rel, overHero = false) {
+  return `<header class="site-header${overHero ? ' site-header--over-hero' : ' is-stuck'}">
   <div class="wrap">
     <a class="brand" href="${rel}index.html">
       <img src="${rel}assets/yarn-wordmark.png" alt="Yarn" width="1400" height="481">
@@ -154,6 +170,16 @@ function footer(rel) {
         </ul>
       </div>
       <div>
+        <h2>Seasons</h2>
+        <ul class="footer-links">
+          ${seasons
+            .map((se) => `<li><a href="${rel}${se.slug}/index.html">${esc(se.title)}</a></li>`)
+            .join('\n          ')}
+          <li><a href="${rel}extras/index.html">Extras</a></li>
+          <li><a href="${rel}documentary-club/index.html">Documentary club</a></li>
+        </ul>
+      </div>
+      <div>
         <h2>Get in touch</h2>
         <ul class="footer-links">
           <li><a href="mailto:${esc(site.email)}">${esc(site.email)}</a></li>
@@ -164,7 +190,7 @@ function footer(rel) {
     </div>
     <div class="colophon">
       <span>&copy; ${new Date().getFullYear()} John Roche &middot; Dublin, Ireland</span>
-      <span>${esc(site.award)}</span>
+      <span>${site.awards.map(esc).join(' &middot; ')}</span>
     </div>
   </div>
 </footer>
@@ -216,15 +242,19 @@ function landing() {
     canonical: site.url + '/',
     image: site.url + '/assets/cover.jpg',
   })}
-${header('')}
+${header('', true)}
 <main>
   <section class="hero">
-    <div class="wrap">
-      <img class="hero-logo" src="assets/yarn-wordmark.png" alt="Yarn" width="1400" height="481" fetchpriority="high">
-      <p class="hero-tagline">a story podcast</p>
+    <div class="hero-banner">
+      <img src="assets/yarn-hero.jpg" alt="Yarn - A Story Podcast" width="1622" height="842" fetchpriority="high">
+    </div>
+    <span id="hero-end" aria-hidden="true"></span>
+    <div class="wrap hero-copy">
       <p class="hero-intro">${esc(site.intro)}</p>
       ${platformList(site.platforms)}
-      <p class="hero-award">${esc(site.award)}</p>
+      <ul class="hero-awards">
+        ${site.awards.map((a) => `<li class="hero-award">${esc(a)}</li>`).join('\n        ')}
+      </ul>
     </div>
   </section>
 
@@ -234,7 +264,6 @@ ${header('')}
         <h2 class="section-title">All episodes</h2>
         <p class="section-note">${episodes.length} stories, six seasons, newest first.</p>
       </div>
-      <hr class="rule">
       <div class="filters" role="group" aria-label="Filter episodes by season">
       ${filters}
       </div>
@@ -251,14 +280,13 @@ ${header('')}
         <h2 class="section-title">Extras</h2>
         <p class="section-note">Side projects, a walking tour and podcast production.</p>
       </div>
-      <hr class="rule">
       <ul class="grid" style="margin-top:26px">
         ${extras.map((e) => card(e, '', 'extras')).join('\n        ')}
       </ul>
     </div>
   </section>
 </main>
-${footer('')}`.replace('</body>', `<script src="app.js" defer></script>\n</body>`);
+${footer('')}`.replace('</body>', `<script src="app.js?v=${stamp}" defer></script>\n</body>`);
 }
 
 /* ---- episode page ---------------------------------------------------- */
@@ -361,6 +389,86 @@ ${header(rel)}
 ${footer(rel)}`;
 }
 
+/* ---- season / extras index pages -------------------------------------- */
+
+function listingPage({ title, heading, blurb, items, hrefBase, slug, crumbs }) {
+  const rel = '../';
+  return `${head({
+    title: `${title} | Yarn`,
+    description: blurb,
+    rel,
+    canonical: `${site.url}/${slug}/`,
+    image: `${site.url}/assets/cover.jpg`,
+  })}
+${header(rel)}
+<main class="wrap">
+  <a class="back-link" href="${rel}index.html">&larr; All episodes</a>
+  <section class="section">
+    <div class="section-head">
+      <h1 class="section-title">${esc(heading)}</h1>
+      <p class="section-note">${esc(crumbs)}</p>
+    </div>
+    <p class="listing-blurb">${esc(blurb)}</p>
+    <ul class="grid">
+      ${items.map((e) => card(e, rel, hrefBase)).join('\n      ')}
+    </ul>
+  </section>
+</main>
+${footer(rel)}`;
+}
+
+/* ---- documentary club ------------------------------------------------- */
+
+function docClubPage() {
+  const rel = '../';
+  const stars = (n) => (n ? `<span class="stars" title="${n} of 3">${'\u2605'.repeat(n)}</span>` : '');
+  const linkify = (p) =>
+    esc(p).replace(
+      '#yarndocclub',
+      '<a class="text-link" href="https://www.instagram.com/explore/search/keyword/?q=%23yarndocclub" target="_blank" rel="noopener">#yarndocclub</a>'
+    );
+  const count = docClub.sections.reduce((n, sec) => n + sec.films.length, 0);
+
+  return `${head({
+    title: `${docClub.title} | Yarn`,
+    description: `${count} favourite documentaries made since 1985, grouped by theme by John Roche of Yarn.`,
+    rel,
+    canonical: `${site.url}/documentary-club/`,
+    image: `${site.url}/assets/cover.jpg`,
+  })}
+${header(rel)}
+<main class="wrap">
+  <a class="back-link" href="${rel}index.html">&larr; All episodes</a>
+  <section class="section doc-club">
+    <h1 class="doc-title">${esc(docClub.title)}</h1>
+    <p class="doc-subtitle">${esc(docClub.subtitle)}</p>
+    <div class="doc-intro">
+      ${docClub.intro.map((p) => `<p>${linkify(p).replace(/\n/g, '<br>')}</p>`).join('\n      ')}
+    </div>
+    <p class="doc-count">${count} documentaries in ${docClub.sections.length} themes. Ratings are one to three stars, and everything listed is worth a watch.</p>
+    ${docClub.sections
+      .map(
+        (sec) => `<section class="doc-section">
+      <h2>${esc(sec.title)}</h2>
+      ${sec.blurb.map((b) => `<p>${esc(b)}</p>`).join('\n      ')}
+      <ul class="doc-films">
+        ${sec.films
+          .map(
+            (f) =>
+              `<li><span class="film-title">${esc(f.title)}</span>${
+                f.year ? `<span class="film-year">${esc(f.year)}</span>` : ''
+              }${stars(f.stars)}</li>`
+          )
+          .join('\n        ')}
+      </ul>
+    </section>`
+      )
+      .join('\n    ')}
+  </section>
+</main>
+${footer(rel)}`;
+}
+
 /* ---- write it all out ------------------------------------------------ */
 
 if (existsSync(DIST)) await rm(DIST, { recursive: true });
@@ -390,10 +498,47 @@ for (const ex of extras) {
   );
 }
 
+for (const se of seasons) {
+  const items = episodes.filter((e) => e.season === se.n);
+  const dir = path.join(DIST, se.slug);
+  await mkdir(dir, { recursive: true });
+  await writeFile(
+    path.join(dir, 'index.html'),
+    listingPage({
+      title: se.title,
+      heading: se.title,
+      blurb: se.blurb,
+      items,
+      hrefBase: 'episodes',
+      slug: se.slug,
+      crumbs: `${items.length} ${items.length === 1 ? 'story' : 'stories'}`,
+    })
+  );
+}
+
+await writeFile(
+  path.join(DIST, 'extras', 'index.html'),
+  listingPage({
+    title: 'Extras',
+    heading: 'Extras',
+    blurb: site.extrasBlurb,
+    items: extras,
+    hrefBase: 'extras',
+    slug: 'extras',
+    crumbs: `${extras.length} things`,
+  })
+);
+
+await mkdir(path.join(DIST, 'documentary-club'), { recursive: true });
+await writeFile(path.join(DIST, 'documentary-club', 'index.html'), docClubPage());
+
 const urls = [
   `${site.url}/`,
+  ...seasons.map((se) => `${site.url}/${se.slug}/`),
+  `${site.url}/extras/`,
   ...episodes.map((e) => `${site.url}/episodes/${e.slug}/`),
   ...extras.map((e) => `${site.url}/extras/${e.slug}/`),
+  `${site.url}/documentary-club/`,
 ];
 await writeFile(
   path.join(DIST, 'sitemap.xml'),
@@ -403,4 +548,6 @@ await writeFile(
 );
 await writeFile(path.join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${site.url}/sitemap.xml\n`);
 
-console.log(`built ${episodes.length} episodes + ${extras.length} extras -> dist/`);
+console.log(
+  `built ${episodes.length} episodes + ${extras.length} extras + ${seasons.length} season pages -> dist/`
+);

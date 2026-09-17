@@ -68,9 +68,50 @@ falls back to the show-level Apple link. A multi-part story leaves `spotify`
 null and lists its parts instead, each with its own `label`, `spotify`,
 `banner`, `date` and `durationText` (see Yarn 19 and Yarn 20).
 
+## Keeping the old URLs working
+
+The Squarespace site is being replaced in place, so every URL that resolves
+today still resolves here. Three mechanisms:
+
+1. **Same path, real page.** `/season-1`, `/season-2`, `/season-3`,
+   `/disability-a-parallel-history` (season 4), `/season-5`, `/season-06`,
+   `/extras` and `/documentary-club` are pages on this site at exactly those
+   paths, spelling and all.
+2. **Redirects** (`vercel.json`). The old site was one long index page whose
+   sections each had their own URL - `/hotel`, `/chernobyl`, `/lefty-1`,
+   `/new-page-3` and so on. Each 308s to the episode it showed. `/home`,
+   `/yarn`, `/new-index-1` and `/new-page-5` go to the landing page, and
+   `/season-4` and `/season-6` are added as the spellings people guess.
+3. **Old anchors** (`src/app.js`). Links shared as `yarnpodcast.com/#hotel`
+   never reach the server, so the landing page reads the fragment and sends
+   those visitors to the right episode.
+
+Adding an episode does not need anything here. Only removing or renaming an
+existing page does: if you change a slug, add a redirect from the old one.
+
+To check the lot after a change, run every legacy path against the site:
+
+```bash
+for p in / /home /documentary-club /season-1 /season-2 /season-3 /disability-a-parallel-history /season-5 /season-06 /extras /yarn /about-yarn /hotel /judys-callers /escape-from-madrid /highest-cyclist /stalker /jury /lone-actors /secret-palace /new-page-3 /how-not-to-be-a-spy-episode-1 /stammer /chernobyl /eyes-dont-lie /blak-bisnis /billy /bomber-boxer /lefty-1 /new-page /new-page-1 /new-index-1 /new-page-5 /season-4 /season-6; do printf "%-32s %s\n" "$p" "$(curl -s -o /dev/null -w '%{http_code} %{url_effective}' -L "https://yarn-podcast.vercel.app$p")"; done
+```
+
+## Deploying
+
+Live at https://yarn-podcast.vercel.app (Vercel project `yarn-podcast`).
+
+```bash
+vercel deploy --cwd yarn --prod
+```
+
+Vercel runs `node build.mjs` itself and serves `dist/`, so a deploy always
+ships a fresh build.
+
 ## Notes
 
 - Content was lifted from the live Squarespace site, the podcast RSS feed and
   the iTunes lookup API in September 2026.
 - Yarn 06, Anthem, is not on Spotify or in the RSS feed any more, so its page
   carries a short note where the player would be.
+- The hero artwork, the wordmark and the favicon are the old site's own files.
+- `data/doc-club.json` holds the documentary club list, 448 titles in 61
+  themes, lifted from the Squarespace page.

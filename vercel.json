@@ -6,11 +6,153 @@
   "headers": [
     {
       "source": "/assets/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     },
     {
       "source": "/(.*).(css|js)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/new-index-1",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/new-page-5",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/yarn",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about-yarn",
+      "destination": "/#about",
+      "permanent": true
+    },
+    {
+      "source": "/new-page-1",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/season-4",
+      "destination": "/disability-a-parallel-history/",
+      "permanent": true
+    },
+    {
+      "source": "/season-6",
+      "destination": "/season-06/",
+      "permanent": true
+    },
+    {
+      "source": "/hotel",
+      "destination": "/episodes/hotel-on-the-edge-of-europe/",
+      "permanent": true
+    },
+    {
+      "source": "/judys-callers",
+      "destination": "/episodes/judys-callers/",
+      "permanent": true
+    },
+    {
+      "source": "/escape-from-madrid",
+      "destination": "/episodes/escape-from-madrid/",
+      "permanent": true
+    },
+    {
+      "source": "/highest-cyclist",
+      "destination": "/episodes/the-highest-cyclist-in-the-world/",
+      "permanent": true
+    },
+    {
+      "source": "/stalker",
+      "destination": "/episodes/the-stalker/",
+      "permanent": true
+    },
+    {
+      "source": "/jury",
+      "destination": "/episodes/ladies-and-gentlemen-of-the-jury/",
+      "permanent": true
+    },
+    {
+      "source": "/lone-actors",
+      "destination": "/episodes/lone-actor-terrorism/",
+      "permanent": true
+    },
+    {
+      "source": "/secret-palace",
+      "destination": "/episodes/the-secret-palace/",
+      "permanent": true
+    },
+    {
+      "source": "/new-page-3",
+      "destination": "/episodes/disability-a-parallel-history/",
+      "permanent": true
+    },
+    {
+      "source": "/how-not-to-be-a-spy-episode-1",
+      "destination": "/episodes/how-not-to-be-a-spy/",
+      "permanent": true
+    },
+    {
+      "source": "/stammer",
+      "destination": "/episodes/stammer/",
+      "permanent": true
+    },
+    {
+      "source": "/chernobyl",
+      "destination": "/episodes/chernobyl/",
+      "permanent": true
+    },
+    {
+      "source": "/eyes-dont-lie",
+      "destination": "/episodes/eyes-dont-lie/",
+      "permanent": true
+    },
+    {
+      "source": "/blak-bisnis",
+      "destination": "/episodes/blak-bisnis/",
+      "permanent": true
+    },
+    {
+      "source": "/billy",
+      "destination": "/episodes/billy/",
+      "permanent": true
+    },
+    {
+      "source": "/bomber-boxer",
+      "destination": "/episodes/the-boxer-and-the-bomber/",
+      "permanent": true
+    },
+    {
+      "source": "/lefty-1",
+      "destination": "/episodes/lefty/",
+      "permanent": true
+    },
+    {
+      "source": "/new-page",
+      "destination": "/episodes/the-absence-of-gary/",
+      "permanent": true
     }
   ]
 }

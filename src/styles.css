@@ -83,10 +83,32 @@ a { color: inherit; }
   position: sticky;
   top: 0;
   z-index: 50;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background .3s ease, border-color .3s ease, backdrop-filter .3s ease;
+}
+
+/* Solid once you are past the hero artwork - and on every page that has no
+   hero, where the header is the only place the wordmark appears. */
+.site-header.is-stuck {
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   background: rgba(8, 6, 28, 0.72);
-  border-bottom: 1px solid rgba(255,255,255,0.07);
+  border-bottom-color: rgba(255,255,255,0.07);
+}
+
+/* No second wordmark while the big one is still on screen. */
+.site-header--over-hero .brand {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity .3s ease, transform .3s ease, visibility .3s;
+}
+
+.site-header--over-hero.is-stuck .brand {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
 }
 
 .site-header .wrap {
@@ -132,38 +154,55 @@ a { color: inherit; }
 
 /* ---- hero ----------------------------------------------------------- */
 
-.hero {
-  text-align: center;
-  padding: clamp(48px, 10vw, 104px) 0 clamp(36px, 6vw, 64px);
+.hero { text-align: center; padding-bottom: clamp(36px, 6vw, 64px); }
+
+/* The banner artwork carries the wordmark and the tagline, so it sits
+   full-bleed and starts under the transparent header. */
+.hero-banner {
+  position: relative;
+  margin-top: -60px;
+  height: clamp(320px, 56vh, 560px);
+  overflow: hidden;
 }
 
-.hero-logo {
-  width: min(560px, 82vw);
-  margin-inline: auto;
-  filter: drop-shadow(0 8px 40px rgba(122, 106, 255, 0.35));
+.hero-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 46%;
 }
 
-.hero-tagline {
-  font-family: var(--font-display);
-  font-size: clamp(15px, 2.4vw, 20px);
-  letter-spacing: 0.22em;
-  text-transform: lowercase;
-  color: var(--paper);
-  margin: 22px 0 0;
+.hero-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8,6,28,0.45) 0%, transparent 22%, transparent 62%, var(--ink) 100%);
+  pointer-events: none;
 }
+
+.hero-copy { margin-top: clamp(4px, 2vw, 18px); }
 
 .hero-intro {
   max-width: 54ch;
-  margin: 20px auto 0;
+  margin: 0 auto;
   color: #cfcaf4;
   font-size: clamp(16px, 1.6vw, 18px);
+}
+
+.hero-awards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
 }
 
 .hero-award {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 22px;
   padding: 7px 14px;
   border: 1px solid rgba(255,255,255,0.16);
   border-radius: 999px;
@@ -233,13 +272,6 @@ a { color: inherit; }
 }
 
 .section-note { color: var(--muted); font-size: 14px; margin: 0; }
-
-.rule {
-  height: 1px;
-  border: 0;
-  background: linear-gradient(90deg, rgba(255,255,255,0.18), transparent);
-  margin: 0;
-}
 
 /* ---- filters --------------------------------------------------------- */
 
@@ -649,3 +681,85 @@ a { color: inherit; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* ---- listing pages (seasons, extras) --------------------------------- */
+
+.listing-blurb {
+  max-width: 62ch;
+  margin: 20px 0 28px;
+  color: #cbc6ef;
+  font-size: 17px;
+}
+
+/* ---- documentary club ------------------------------------------------ */
+
+.doc-title {
+  font-size: clamp(30px, 5vw, 46px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+}
+
+.doc-subtitle {
+  font-family: var(--font-display);
+  font-size: clamp(14px, 2vw, 17px);
+  letter-spacing: 0.08em;
+  color: var(--violet-lit);
+  margin: 0 0 28px;
+}
+
+.doc-intro, .doc-section p { max-width: 68ch; color: #cbc6ef; }
+
+.doc-count {
+  max-width: 68ch;
+  margin: 26px 0 0;
+  padding: 14px 16px;
+  border-left: 2px solid var(--violet-lit);
+  background: var(--panel);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.doc-section {
+  margin-top: 44px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(255,255,255,0.09);
+}
+
+.doc-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(17px, 2.2vw, 21px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.doc-films {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr));
+  gap: 2px 24px;
+}
+
+.doc-films li {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 15px;
+}
+
+.film-title { flex: 1 1 auto; }
+.film-year { font-family: var(--font-display); font-size: 12.5px; color: var(--muted); }
+.stars { color: var(--violet-lit); font-size: 12px; letter-spacing: 1px; white-space: nowrap; }
+
+@media (max-width: 620px) {
+  .hero-banner { height: clamp(260px, 38vh, 340px); }
+}
+
+/* Scroll sentinel for the header state - needs a box for IntersectionObserver. */
+#hero-end { display: block; height: 1px; }

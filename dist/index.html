@@ -7,7 +7,7 @@
 <meta name="description" content="Narrative documentaries and dramas. Whether we're spinning yarns or unraveling them, Yarn is a podcast about telling good stories.">
 <meta name="theme-color" content="#08061c">
 <link rel="canonical" href="https://www.yarnpodcast.com/">
-<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="assets/favicon.png">
 <meta property="og:site_name" content="Yarn | A Story Podcast">
 <meta property="og:type" content="website">
@@ -19,10 +19,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=73179987">
 </head>
 <body>
-<header class="site-header">
+<header class="site-header site-header--over-hero">
   <div class="wrap">
     <a class="brand" href="index.html">
       <img src="assets/yarn-wordmark.png" alt="Yarn" width="1400" height="481">
@@ -37,12 +37,17 @@
 </header>
 <main>
   <section class="hero">
-    <div class="wrap">
-      <img class="hero-logo" src="assets/yarn-wordmark.png" alt="Yarn" width="1400" height="481" fetchpriority="high">
-      <p class="hero-tagline">a story podcast</p>
+    <div class="hero-banner">
+      <img src="assets/yarn-hero.jpg" alt="Yarn - A Story Podcast" width="1622" height="842" fetchpriority="high">
+    </div>
+    <span id="hero-end" aria-hidden="true"></span>
+    <div class="wrap hero-copy">
       <p class="hero-intro">Narrative documentaries and dramas. Whether we're spinning yarns or unraveling them, Yarn is a podcast about telling good stories.</p>
       <ul class="platforms"><li><a class="platform" href="https://podcasts.apple.com/ie/podcast/yarn-a-story-podcast/id1348286075?mt=2" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a5.2 5.2 0 0 0-5.2 5.2v2.1H6A2.9 2.9 0 0 0 3 12.3v1.4a2.9 2.9 0 0 0 5.8 0v-1.4A2.9 2.9 0 0 0 7.5 9.7V7.2a4.5 4.5 0 0 1 9 0v2.5a2.9 2.9 0 0 0-1.3 2.6v1.4a2.9 2.9 0 0 0 5.8 0v-1.4a2.9 2.9 0 0 0-2.8-2.9V7.2A5.2 5.2 0 0 0 12 2Z"/><path d="M12 11.6a2.6 2.6 0 0 0-2.6 2.6c0 1 .6 1.9 1.4 2.3l-.7 4a1.9 1.9 0 0 0 1.9 2.2 1.9 1.9 0 0 0 1.9-2.2l-.7-4a2.6 2.6 0 0 0 1.4-2.3 2.6 2.6 0 0 0-2.6-2.6Z"/></svg><span>Apple Podcasts</span></a></li><li><a class="platform" href="https://open.spotify.com/show/5e0iwnIFXraz6GfIce8glP" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.6 14.4a.8.8 0 0 1-1.1.3c-3-1.8-6.7-2.2-11.1-1.2a.8.8 0 1 1-.3-1.5c4.8-1.1 8.9-.6 12.2 1.4a.8.8 0 0 1 .3 1Zm1.2-2.8a1 1 0 0 1-1.3.3c-3.4-2.1-8.5-2.7-12.5-1.5a1 1 0 0 1-.6-1.9c4.5-1.4 10.2-.7 14.1 1.7a1 1 0 0 1 .3 1.4Zm.1-2.9C14.1 8.3 7.9 8.1 4.4 9.2a1.2 1.2 0 1 1-.7-2.3C7.8 5.6 14.6 5.8 19 8.4a1.2 1.2 0 0 1-1.2 2.1l.1.2Z"/></svg><span>Spotify</span></a></li><li><a class="platform" href="https://pca.st/qlqnpebq" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 3.1a6.9 6.9 0 0 1 6.9 6.9h-2.6A4.3 4.3 0 1 0 12 16.3v2.6A6.9 6.9 0 0 1 12 5.1Z"/></svg><span>Pocket Casts</span></a></li><li><a class="platform" href="https://overcast.fm/itunes1348286075/yarn-a-story-podcast" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-4.3 5.3.9.9a4.8 4.8 0 0 0 0 6.7l-.9.9a6 6 0 0 1 0-8.5Zm8.6 0a6 6 0 0 1 0 8.5l-.9-.9a4.8 4.8 0 0 0 0-6.7l.9-.9ZM12 9.4a1.7 1.7 0 0 1 1 3.1l1.2 5.3c.1.5-.3.9-.8.9h-2.8c-.5 0-.9-.4-.8-.9L11 12.5a1.7 1.7 0 0 1 1-3.1Z"/></svg><span>Overcast</span></a></li><li><a class="platform" href="https://music.youtube.com/playlist?list=PLk3FiCegjjy8iKLvFBSEBikogQj_c9WNF" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-2 5.8 7 4.2-7 4.2V7.8Z"/></svg><span>YouTube Music</span></a></li><li><a class="platform" href="https://anchor.fm/s/2941872c/podcast/rss" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3a1.5 1.5 0 0 0 0 3 13 13 0 0 1 13 13 1.5 1.5 0 0 0 3 0A16 16 0 0 0 5 3Zm0 6a1.5 1.5 0 0 0 0 3 7 7 0 0 1 7 7 1.5 1.5 0 0 0 3 0 10 10 0 0 0-10-10Zm1.6 7.9a2.1 2.1 0 1 0 0 4.2 2.1 2.1 0 0 0 0-4.2Z"/></svg><span>RSS feed</span></a></li><li><a class="platform" href="https://pod.link/1348286075" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm6 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm6 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></svg><span>More platforms</span></a></li></ul>
-      <p class="hero-award">Signal Podcast Awards, Winner 2025: Best indie podcast (Bronze)</p>
+      <ul class="hero-awards">
+        <li class="hero-award">Signal Podcast Awards, Bronze 2025: Best indie podcast</li>
+        <li class="hero-award">Irish Podcast Awards, Gold 2022: Best factual podcast</li>
+      </ul>
     </div>
   </section>
 
@@ -52,7 +57,6 @@
         <h2 class="section-title">All episodes</h2>
         <p class="section-note">29 stories, six seasons, newest first.</p>
       </div>
-      <hr class="rule">
       <div class="filters" role="group" aria-label="Filter episodes by season">
       <button class="filter" type="button" data-filter="all" aria-pressed="true">All 29</button>
       <button class="filter" type="button" data-filter="6" aria-pressed="false">Season 6</button>
@@ -393,7 +397,6 @@
         <h2 class="section-title">Extras</h2>
         <p class="section-note">Side projects, a walking tour and podcast production.</p>
       </div>
-      <hr class="rule">
       <ul class="grid" style="margin-top:26px">
         <li class="card" data-season="extras">
   <a href="extras/yarn-podcast-production/index.html">
@@ -454,6 +457,19 @@
         </ul>
       </div>
       <div>
+        <h2>Seasons</h2>
+        <ul class="footer-links">
+          <li><a href="season-1/index.html">Season 1</a></li>
+          <li><a href="season-2/index.html">Season 2</a></li>
+          <li><a href="season-3/index.html">Season 3</a></li>
+          <li><a href="disability-a-parallel-history/index.html">Season 4</a></li>
+          <li><a href="season-5/index.html">Season 5</a></li>
+          <li><a href="season-06/index.html">Season 6</a></li>
+          <li><a href="extras/index.html">Extras</a></li>
+          <li><a href="documentary-club/index.html">Documentary club</a></li>
+        </ul>
+      </div>
+      <div>
         <h2>Get in touch</h2>
         <ul class="footer-links">
           <li><a href="mailto:yarnstorypodcast@gmail.com">yarnstorypodcast@gmail.com</a></li>
@@ -464,10 +480,10 @@
     </div>
     <div class="colophon">
       <span>&copy; 2026 John Roche &middot; Dublin, Ireland</span>
-      <span>Signal Podcast Awards, Winner 2025: Best indie podcast (Bronze)</span>
+      <span>Signal Podcast Awards, Bronze 2025: Best indie podcast &middot; Irish Podcast Awards, Gold 2022: Best factual podcast</span>
     </div>
   </div>
 </footer>
-<script src="app.js" defer></script>
+<script src="app.js?v=73179987" defer></script>
 </body>
 </html>
