@@ -91,12 +91,20 @@
   var status = document.getElementById('doc-search-status');
   var sections = [].slice.call(document.querySelectorAll('.doc-section'));
   var index = document.querySelector('.doc-index');
+  var count = document.querySelector('.doc-count');
 
   var entries = sections.map(function (section) {
     var films = [].slice.call(section.querySelectorAll('.doc-films li')).map(function (li) {
       return { li: li, text: li.textContent.toLowerCase() };
     });
-    return { section: section, theme: section.querySelector('h2').textContent.toLowerCase(), films: films };
+    return {
+      section: section,
+      theme: section.querySelector('h2').textContent.toLowerCase(),
+      /* The blurbs name films and years of their own, so they are noise in a
+         set of results - they go while a search is running. */
+      blurbs: [].slice.call(section.querySelectorAll('p')),
+      films: films,
+    };
   });
 
   var total = entries.reduce(function (n, e) { return n + e.films.length; }, 0);
@@ -106,9 +114,11 @@
     if (!q) {
       entries.forEach(function (entry) {
         entry.section.hidden = false;
+        entry.blurbs.forEach(function (b) { b.hidden = false; });
         entry.films.forEach(function (f) { f.li.hidden = false; });
       });
       if (index) index.hidden = false;
+      if (count) count.hidden = false;
       if (status) status.textContent = '';
       return;
     }
@@ -124,10 +134,12 @@
         if (match) hits++;
       });
       entry.section.hidden = hits === 0;
+      entry.blurbs.forEach(function (b) { b.hidden = true; });
       shown += hits;
     });
 
     if (index) index.hidden = true;
+    if (count) count.hidden = true;
     if (status) {
       status.textContent = shown
         ? shown + (shown === 1 ? ' documentary' : ' documentaries') + ' of ' + total

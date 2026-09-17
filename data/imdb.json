@@ -3243,5 +3243,62 @@
   "year": 2026,
   "type": "movie",
   "score": 13
+ },
+ "Reality|2023": {
+  "id": "tt24068064",
+  "title": "Reality",
+  "year": 2023,
+  "type": "movie",
+  "score": 13
+ },
+ "The Armstrong Lie|2013": {
+  "id": "tt1638364",
+  "title": "The Armstrong Lie",
+  "year": 2013,
+  "type": "movie",
+  "score": 13
+ },
+ "Lance|2020": null,
+ "Dogs of war|2024": {
+  "id": "tt34383579",
+  "title": "Dogs of War",
+  "year": 2024,
+  "type": "movie",
+  "score": 13
+ },
+ "Clive James Meets the Supermodels|1998": {
+  "id": "tt0417544",
+  "title": "Clive James Meets Damon Hill",
+  "year": 1997,
+  "type": "tvMovie",
+  "score": 4
+ },
+ "Outfoxed: Rupert Murdoch's War on Journalism|2004": {
+  "id": "tt0418038",
+  "title": "Outfoxed: Rupert Murdoch's War on Journalism",
+  "year": 2004,
+  "type": "movie",
+  "score": 13
+ },
+ "The Agony and the Ecstasy of Phil Spector|2009": {
+  "id": "tt1518821",
+  "title": "The Agony and the Ecstasy of Phil Spector",
+  "year": 2008,
+  "type": "movie",
+  "score": 10
+ },
+ "Trump: The criminal conspiracy case|2024": {
+  "id": "tt34277309",
+  "title": "Trump: The Criminal Conspiracy Case",
+  "year": 2024,
+  "type": "tvMovie",
+  "score": 13
+ },
+ "Telemarketers|2023": {
+  "id": "tt28498129",
+  "title": "Telemarketers",
+  "year": 2023,
+  "type": "tvMiniSeries",
+  "score": 13
  }
 }
