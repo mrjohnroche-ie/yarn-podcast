@@ -327,7 +327,6 @@ ${header('', true)}
     <div class="wrap">
       <div class="section-head">
         <h2 class="section-title">Extras</h2>
-        <p class="section-note">${esc(site.extrasBlurb)}</p>
       </div>
       <ul class="grid" style="margin-top:26px">
         ${extras.map((e) => card(e, '', 'extras')).join('\n        ')}
@@ -465,7 +464,7 @@ ${footer(rel)}`;
 
 /* ---- season / extras index pages -------------------------------------- */
 
-function listingPage({ title, heading, blurb, items, hrefBase, slug, crumbs }) {
+function listingPage({ title, heading, blurb, items, hrefBase, slug, crumbs, hideBlurb }) {
   const rel = '../';
   return `${head({
     title: `${title} | Yarn`,
@@ -482,7 +481,7 @@ ${header(rel)}
       <h1 class="section-title">${esc(heading)}</h1>
       <p class="section-note">${esc(crumbs)}</p>
     </div>
-    <p class="listing-blurb">${esc(blurb)}</p>
+    ${hideBlurb ? '' : `<p class="listing-blurb">${esc(blurb)}</p>`}
     <ul class="grid">
       ${items.map((e) => card(e, rel, hrefBase)).join('\n      ')}
     </ul>
@@ -619,6 +618,7 @@ await writeFile(
     title: 'Extras',
     heading: 'Extras',
     blurb: site.extrasBlurb,
+    hideBlurb: true,
     items: extras,
     hrefBase: 'extras',
     slug: 'extras',
