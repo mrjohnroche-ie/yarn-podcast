@@ -22,6 +22,11 @@ const site = JSON.parse(await readFile(path.join(ROOT, 'data/site.json'), 'utf8'
 const data = JSON.parse(await readFile(path.join(ROOT, 'data/episodes.json'), 'utf8'));
 const docClub = JSON.parse(await readFile(path.join(ROOT, 'data/doc-club.json'), 'utf8'));
 const press = JSON.parse(await readFile(path.join(ROOT, 'data/press.json'), 'utf8'));
+/* Resolved IMDb ids for the documentary club, keyed "title|year". Optional:
+   without it every film falls back to an IMDb search. */
+const imdb = existsSync(path.join(ROOT, 'data/imdb.json'))
+  ? JSON.parse(await readFile(path.join(ROOT, 'data/imdb.json'), 'utf8'))
+  : {};
 const episodes = data.episodes;
 const extras = data.extras;
 const seasons = site.seasons;
@@ -43,6 +48,14 @@ const stamp = createHash('sha1')
 
 const esc = (s = '') =>
   String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+const slugify = (s) =>
+  s
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
 
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
@@ -453,6 +466,16 @@ ${footer(rel)}`;
 
 /* ---- documentary club ------------------------------------------------- */
 
+/* A confident match links straight to the title page; anything shakier - a
+   name with no year, or a year that did not line up - goes to an IMDb search
+   so the link still lands somewhere useful. */
+function imdbLink(film) {
+  const hit = imdb[`${film.title}|${film.year || ''}`];
+  if (hit && hit.id && hit.score >= 6) return `https://www.imdb.com/title/${hit.id}/`;
+  const q = encodeURIComponent([film.title, film.year].filter(Boolean).join(' '));
+  return `https://www.imdb.com/find/?q=${q}&s=tt`;
+}
+
 function docClubPage() {
   const rel = '../';
   const stars = (n) => (n ? `<span class="stars" title="${n} of 3">${'\u2605'.repeat(n)}</span>` : '');
@@ -480,16 +503,26 @@ ${header(rel)}
       ${docClub.intro.map((p) => `<p>${linkify(p).replace(/\n/g, '<br>')}</p>`).join('\n      ')}
     </div>
     <p class="doc-count">${count} documentaries in ${docClub.sections.length} themes. Ratings are one to three stars, and everything listed is worth a watch.</p>
+    <nav class="doc-index" aria-label="Themes">
+      <h2>Themes</h2>
+      <ul>
+        ${docClub.sections
+          .map((sec) => `<li><a href="#${slugify(sec.title)}">${esc(sec.title)}</a></li>`)
+          .join('\n        ')}
+      </ul>
+    </nav>
     ${docClub.sections
       .map(
-        (sec) => `<section class="doc-section">
+        (sec) => `<section class="doc-section" id="${slugify(sec.title)}">
       <h2>${esc(sec.title)}</h2>
       ${sec.blurb.map((b) => `<p>${esc(b)}</p>`).join('\n      ')}
       <ul class="doc-films">
         ${sec.films
           .map(
             (f) =>
-              `<li><span class="film-title">${esc(f.title)}</span>${
+              `<li><span class="film-title"><a href="${esc(
+                imdbLink(f)
+              )}" target="_blank" rel="noopener">${esc(f.title)}</a></span>${
                 f.year ? `<span class="film-year">${esc(f.year)}</span>` : ''
               }${stars(f.stars)}</li>`
           )

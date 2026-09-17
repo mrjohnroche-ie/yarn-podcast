@@ -117,4 +117,8 @@ ships a fresh build.
   carries a short note where the player would be.
 - The hero artwork, the wordmark and the favicon are the old site's own files.
 - `data/doc-club.json` holds the documentary club list, 448 titles in 61
-  themes, lifted from the Squarespace page.
+  themes, lifted from the Squarespace page. Each title links to IMDb:
+  `data/imdb.json` maps "title|year" to the id IMDb's own search box returns,
+  and anything that did not match confidently falls back to an IMDb search
+  rather than guessing. To correct one, put the right `tt` id and a `score`
+  of 6 or more against that key, or delete the entry to force the search.
