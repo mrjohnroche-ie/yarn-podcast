@@ -74,9 +74,11 @@ The Squarespace site is being replaced in place, so every URL that resolves
 today still resolves here. Three mechanisms:
 
 1. **Same path, real page.** `/season-1`, `/season-2`, `/season-3`,
-   `/disability-a-parallel-history` (season 4), `/season-5`, `/season-06`,
-   `/extras` and `/documentary-club` are pages on this site at exactly those
-   paths, spelling and all.
+   `/season-5`, `/season-06`, `/extras` and `/documentary-club` are pages on
+   this site at exactly those paths, spelling and all. Season 4 is the one
+   exception: it is a single story, so `/disability-a-parallel-history`
+   redirects to the episode itself rather than to a listing page holding one
+   card. Give any season a `redirect` in `data/site.json` to do the same.
 2. **Redirects** (`vercel.json`). The old site was one long index page whose
    sections each had their own URL - `/hotel`, `/chernobyl`, `/lefty-1`,
    `/new-page-3` and so on. Each 308s to the episode it showed. `/home`,

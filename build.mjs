@@ -177,7 +177,10 @@ function footer(rel) {
         <h2>Seasons</h2>
         <ul class="footer-links">
           ${seasons
-            .map((se) => `<li><a href="${rel}${se.slug}/index.html">${esc(se.title)}</a></li>`)
+            .map(
+              (se) =>
+                `<li><a href="${rel}${se.redirect || se.slug + '/index.html'}">${esc(se.title)}</a></li>`
+            )
             .join('\n          ')}
           <li><a href="${rel}extras/index.html">Extras</a></li>
           <li><a href="${rel}documentary-club/index.html">Documentary club</a></li>
@@ -541,6 +544,7 @@ for (const ex of extras) {
 }
 
 for (const se of seasons) {
+  if (se.redirect) continue;
   const items = episodes.filter((e) => e.season === se.n);
   const dir = path.join(DIST, se.slug);
   await mkdir(dir, { recursive: true });
@@ -576,7 +580,7 @@ await writeFile(path.join(DIST, 'documentary-club', 'index.html'), docClubPage()
 
 const urls = [
   `${site.url}/`,
-  ...seasons.map((se) => `${site.url}/${se.slug}/`),
+  ...seasons.filter((se) => !se.redirect).map((se) => `${site.url}/${se.slug}/`),
   `${site.url}/extras/`,
   ...episodes.map((e) => `${site.url}/episodes/${e.slug}/`),
   ...extras.filter((e) => !e.href).map((e) => `${site.url}/extras/${e.slug}/`),
