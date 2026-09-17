@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.yarnpodcast.com/sitemap.xml

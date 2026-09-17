@@ -1,0 +1,24 @@
+{
+  "title": "Yarn | A Story Podcast",
+  "tagline": "A Story Podcast.",
+  "url": "https://www.yarnpodcast.com",
+  "intro": "Narrative documentaries and dramas. Whether we're spinning yarns or unraveling them, Yarn is a podcast about telling good stories.",
+  "about": [
+    "We have 29 different stories now, each in a different style. Most episodes are standalone but some bigger stories are part of a series.",
+    "We've done a 3-part doc series on the history of disability, a 2-part docu-drama about a Nazi spy in Ireland during WW2. We've taken listeners on a trip around the Chernobyl exclusion zone, on a ride-along with a New York police officer and into the bizarre palace of a corrupt dictator.",
+    "Produced and presented by John Roche in Dublin, Ireland since 2017."
+  ],
+  "award": "Signal Podcast Awards, Winner 2025: Best indie podcast (Bronze)",
+  "email": "yarnstorypodcast@gmail.com",
+  "instagram": "https://www.instagram.com/yarnstorypod",
+  "appleId": "1348286075",
+  "platforms": [
+    { "id": "apple", "name": "Apple Podcasts", "url": "https://podcasts.apple.com/ie/podcast/yarn-a-story-podcast/id1348286075?mt=2" },
+    { "id": "spotify", "name": "Spotify", "url": "https://open.spotify.com/show/5e0iwnIFXraz6GfIce8glP" },
+    { "id": "pocketcasts", "name": "Pocket Casts", "url": "https://pca.st/qlqnpebq" },
+    { "id": "overcast", "name": "Overcast", "url": "https://overcast.fm/itunes1348286075/yarn-a-story-podcast" },
+    { "id": "youtube", "name": "YouTube Music", "url": "https://music.youtube.com/playlist?list=PLk3FiCegjjy8iKLvFBSEBikogQj_c9WNF" },
+    { "id": "rss", "name": "RSS feed", "url": "https://anchor.fm/s/2941872c/podcast/rss" },
+    { "id": "more", "name": "More platforms", "url": "https://pod.link/1348286075" }
+  ]
+}
