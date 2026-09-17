@@ -232,14 +232,23 @@ function cardMeta(ep) {
 
 function card(ep, rel, hrefBase) {
   const blurb = (ep.description && ep.description[0]) || '';
-  const href = ep.href ? `${rel}${ep.href}` : `${rel}${hrefBase}/${ep.slug}/index.html`;
+  const external = Boolean(ep.href && ep.href.startsWith('http'));
+  const href = ep.href
+    ? external
+      ? ep.href
+      : `${rel}${ep.href}`
+    : `${rel}${hrefBase}/${ep.slug}/index.html`;
   return `<li class="card" data-season="${ep.season || 'extras'}">
-  <a href="${href}">
+  <a href="${href}"${external ? ' target="_blank" rel="noopener"' : ''}>
     <div class="card-art">
       <img src="${rel}${ep.art.replace('assets/art/', 'assets/thumb/')}" alt="Cover art for ${esc(
         ep.title
       )}" loading="lazy" width="460" height="460">
-      <span class="card-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg></span>
+      <span class="card-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor">${
+        external
+          ? '<path d="M7 17 17 7M9 7h8v8"  stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>'
+          : '<path d="M8 5.5v13l11-6.5-11-6.5Z"/>'
+      }</svg></span>
     </div>
     <p class="card-meta">${cardMeta(ep)}</p>
     <h3 class="card-title">${esc(ep.title)}</h3>

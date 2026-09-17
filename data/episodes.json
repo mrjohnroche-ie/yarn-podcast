@@ -781,6 +781,19 @@
    "spotify": null,
    "parts": [],
    "art": "assets/art/documentary-club.jpg"
+  },
+  {
+   "slug": "doc-radar",
+   "title": "Doc Radar",
+   "description": [
+    "Every documentary worth knowing about, month by month.",
+    "Upcoming releases from the distributors, broadcasters, streamers and sales agents that matter, updated weekly."
+   ],
+   "art": "assets/art/doc-radar.jpg",
+   "href": "https://doc-radar-weld.vercel.app/",
+   "links": [],
+   "spotify": null,
+   "parts": []
   }
  ]
 }
