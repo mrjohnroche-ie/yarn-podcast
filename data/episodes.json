@@ -816,7 +816,16 @@
     "Gil Scott Heron, Lynne Ramsay’s You Were Never Really Here, Jonny Greenwood, Kyu Sakomoto, Feargal Sharkey, The Commitments, The Snapper, Brian Eno, Triona and Maighread ni Domhnaill, John Hurt, RadioLab, Johann Johannasson, The Truth, BBC3 Between the ears, The Gerry Ryan Show, Moot tapes, Handel, Cannonball Aderley"
    ],
    "art": "assets/art/thread-radio.jpg",
-   "links": [],
+   "links": [
+    {
+     "label": "Part 1 on Mixcloud",
+     "url": "https://www.mixcloud.com/yarnpodcast/thread-radio-episode-1/"
+    },
+    {
+     "label": "Part 2 on Mixcloud",
+     "url": "https://www.mixcloud.com/yarnpodcast/thread-radio-part-ii/"
+    }
+   ],
    "spotify": null,
    "durationText": null
   },
