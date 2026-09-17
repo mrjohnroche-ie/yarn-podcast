@@ -57,8 +57,11 @@ function shortDate(iso) {
   return `${MONTHS[m - 1].slice(0, 3)} ${y}`;
 }
 
+/* No theme param: left alone, the Spotify player tints itself from the
+   episode artwork, the way the old site's embeds did. theme=0 would force
+   every one of them to the same flat black. */
 const spotifyEmbed = (id, title) =>
-  `<iframe src="https://open.spotify.com/embed/episode/${esc(id)}?utm_source=generator&amp;theme=0" title="Spotify player: ${esc(title)}" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+  `<iframe src="https://open.spotify.com/embed/episode/${esc(id)}?utm_source=generator" title="Spotify player: ${esc(title)}" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
 
 /* ---- platform icons (inline, so there is nothing extra to load) ------- */
 
@@ -261,7 +264,7 @@ ${header('', true)}
   <section class="section" id="episodes">
     <div class="wrap">
       <div class="section-head">
-        <h2 class="section-title">All episodes</h2>
+        <h2 class="section-title">Episodes</h2>
         <p class="section-note">${episodes.length} stories, six seasons, newest first.</p>
       </div>
       <div class="filters" role="group" aria-label="Filter episodes by season">
@@ -366,7 +369,7 @@ function episodePage(ep, prev, next, { rel, hrefBase }) {
   })}
 ${header(rel)}
 <main class="wrap">
-  <a class="back-link" href="${rel}index.html">&larr; All episodes</a>
+  <a class="back-link" href="${rel}index.html">&larr; Episodes</a>
   <article class="episode">
     <div class="episode-art">
       <img src="${rel}${ep.art}" alt="Cover art for ${esc(ep.title)}" width="900" height="900" fetchpriority="high">
@@ -402,7 +405,7 @@ function listingPage({ title, heading, blurb, items, hrefBase, slug, crumbs }) {
   })}
 ${header(rel)}
 <main class="wrap">
-  <a class="back-link" href="${rel}index.html">&larr; All episodes</a>
+  <a class="back-link" href="${rel}index.html">&larr; Episodes</a>
   <section class="section">
     <div class="section-head">
       <h1 class="section-title">${esc(heading)}</h1>
@@ -438,7 +441,7 @@ function docClubPage() {
   })}
 ${header(rel)}
 <main class="wrap">
-  <a class="back-link" href="${rel}index.html">&larr; All episodes</a>
+  <a class="back-link" href="${rel}index.html">&larr; Episodes</a>
   <section class="section doc-club">
     <h1 class="doc-title">${esc(docClub.title)}</h1>
     <p class="doc-subtitle">${esc(docClub.subtitle)}</p>

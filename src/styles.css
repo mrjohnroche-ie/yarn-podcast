@@ -763,3 +763,13 @@ a { color: inherit; }
 
 /* Scroll sentinel for the header state - needs a box for IntersectionObserver. */
 #hero-end { display: block; height: 1px; }
+
+/* Phones: one episode at a time, with room for the blurb again. */
+@media (max-width: 520px) {
+  .grid { grid-template-columns: 1fr; gap: 26px; }
+  .card-title { font-size: 19px; }
+  .card-meta { font-size: 11.5px; }
+  .card-meta .meta-date { display: inline; }
+  .card-blurb { display: -webkit-box; font-size: 15px; }
+  .card-play { width: 42px; height: 42px; inset: auto 12px 12px auto; }
+}
