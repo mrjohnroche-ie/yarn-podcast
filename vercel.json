@@ -25,6 +25,16 @@
   ],
   "redirects": [
     {
+      "source": "/season-3/",
+      "destination": "/episodes/how-not-to-be-a-spy/",
+      "permanent": true
+    },
+    {
+      "source": "/season-3",
+      "destination": "/episodes/how-not-to-be-a-spy/",
+      "permanent": true
+    },
+    {
       "source": "/disability-a-parallel-history",
       "destination": "/episodes/disability-a-parallel-history/",
       "permanent": true
