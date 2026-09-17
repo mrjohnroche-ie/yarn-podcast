@@ -287,7 +287,8 @@
    "durationText": "2h 13m",
    "tags": [
     "mini-series",
-    "history"
+    "history",
+    "disability"
    ]
   },
   {
@@ -627,7 +628,8 @@
    "duration": "10:16",
    "durationText": "10 min",
    "tags": [
-    "drama"
+    "drama",
+    "personal-story"
    ]
   },
   {
@@ -677,7 +679,9 @@
    "duration": "19:10",
    "durationText": "19 min",
    "tags": [
-    "drama"
+    "drama",
+    "personal-story",
+    "disability"
    ]
   },
   {
@@ -723,7 +727,8 @@
    "duration": "16:16",
    "durationText": "16 min",
    "tags": [
-    "drama"
+    "drama",
+    "personal-story"
    ]
   },
   {
@@ -746,7 +751,8 @@
    "duration": "10:15",
    "durationText": "10 min",
    "tags": [
-    "drama"
+    "drama",
+    "personal-story"
    ]
   },
   {
@@ -769,7 +775,8 @@
    "duration": "10:34",
    "durationText": "11 min",
    "tags": [
-    "drama"
+    "drama",
+    "personal-story"
    ]
   }
  ],
