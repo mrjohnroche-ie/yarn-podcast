@@ -1,0 +1,11 @@
+{
+  "name": "yarn-podcast-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Website for Yarn | A Story Podcast",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "preview": "node serve.mjs 4180"
+  }
+}
