@@ -208,7 +208,6 @@ function footer(rel) {
 /* ---- cards ----------------------------------------------------------- */
 
 function cardMeta(ep) {
-  if (ep.tile) return '';
   const bits = [ep.n ? `Yarn ${String(ep.n).padStart(2, '0')}` : 'Extra'];
   if (ep.durationText) bits.push(esc(ep.durationText));
   else if (ep.parts && ep.parts.length) bits.push(`${ep.parts.length} parts`);
@@ -221,22 +220,14 @@ function cardMeta(ep) {
 function card(ep, rel, hrefBase) {
   const blurb = (ep.description && ep.description[0]) || '';
   const href = ep.href ? `${rel}${ep.href}` : `${rel}${hrefBase}/${ep.slug}/index.html`;
-  /* Not everything in the extras has cover art - those get a typographic tile
-     rather than a borrowed or invented image. */
-  const art = ep.tile
-    ? `<div class="card-art card-art--tile">
-      <span class="tile-kicker">${esc(ep.tile.kicker)}</span>
-      <span class="tile-label">${esc(ep.tile.label)}</span>
-    </div>`
-    : `<div class="card-art">
+  return `<li class="card" data-season="${ep.season || 'extras'}">
+  <a href="${href}">
+    <div class="card-art">
       <img src="${rel}${ep.art.replace('assets/art/', 'assets/thumb/')}" alt="Cover art for ${esc(
         ep.title
       )}" loading="lazy" width="460" height="460">
       <span class="card-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg></span>
-    </div>`;
-  return `<li class="card" data-season="${ep.season || 'extras'}">
-  <a href="${href}">
-    ${art}
+    </div>
     <p class="card-meta">${cardMeta(ep)}</p>
     <h3 class="card-title">${esc(ep.title)}</h3>
     <p class="card-blurb">${esc(blurb)}</p>

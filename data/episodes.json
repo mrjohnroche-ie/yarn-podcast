@@ -764,14 +764,11 @@
    "description": [
     "Reviews, features and awards, from The Guardian to the Irish Examiner."
    ],
-   "tile": {
-    "kicker": "Coverage",
-    "label": "Press"
-   },
    "press": true,
    "links": [],
    "spotify": null,
-   "parts": []
+   "parts": [],
+   "art": "assets/art/press.jpg"
   },
   {
    "slug": "documentary-club",
@@ -779,14 +776,11 @@
    "description": [
     "A personal list of the best documentaries made since 1985, 448 of them, grouped into 61 themes and rated out of three."
    ],
-   "tile": {
-    "kicker": "448 films",
-    "label": "Documentary Club"
-   },
    "href": "documentary-club/index.html",
    "links": [],
    "spotify": null,
-   "parts": []
+   "parts": [],
+   "art": "assets/art/documentary-club.jpg"
   }
  ]
 }
