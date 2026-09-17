@@ -449,7 +449,7 @@ ${header(rel)}
       ${pressList}
       ${links}
       ${
-        ep.press
+        ep.hideListen
           ? ''
           : `<div class="listen-block">
         <h2>Also listen on</h2>

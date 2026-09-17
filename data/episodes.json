@@ -827,7 +827,8 @@
     }
    ],
    "spotify": null,
-   "durationText": null
+   "durationText": null,
+   "hideListen": true
   },
   {
    "slug": "audio-walking-tour",
@@ -884,7 +885,8 @@
    "links": [],
    "spotify": null,
    "parts": [],
-   "art": "assets/art/press.jpg"
+   "art": "assets/art/press.jpg",
+   "hideListen": true
   },
   {
    "slug": "documentary-club",
