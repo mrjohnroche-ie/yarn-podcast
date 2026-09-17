@@ -301,7 +301,6 @@ ${header('', true)}
     <div class="wrap">
       <div class="section-head">
         <h2 class="section-title">Episodes</h2>
-        <p class="section-note">${episodes.length} stories, newest first. Pick a subject to narrow them down.</p>
       </div>
       <div class="filters" role="group" aria-label="Filter episodes by subject">
       ${filters}
