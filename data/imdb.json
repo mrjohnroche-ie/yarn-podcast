@@ -3068,5 +3068,173 @@
   "year": 2025,
   "type": "movie",
   "score": 1
+ },
+ "Jaws at 50|2025": {
+  "id": "tt32743685",
+  "title": "Jaws @ 50: The Definitive Inside Story",
+  "year": 2025,
+  "type": "movie",
+  "score": 7
+ },
+ "One to One: John Lennon & Yoko Ono|2024": {
+  "id": "tt33029955",
+  "title": "One to One: John & Yoko",
+  "year": 2024,
+  "type": "movie",
+  "score": 7
+ },
+ "Grand Theft Hamlet|2024": {
+  "id": "tt28244549",
+  "title": "Grand Theft Hamlet",
+  "year": 2024,
+  "type": "movie",
+  "score": 13
+ },
+ "The Alabama Solution|2025": {
+  "id": "tt35307139",
+  "title": "The Alabama Solution",
+  "year": 2025,
+  "type": "movie",
+  "score": 13
+ },
+ "Pee-wee as Himself|2025": {
+  "id": "tt14419140",
+  "title": "Pee-wee as Himself",
+  "year": 2025,
+  "type": "tvMiniSeries",
+  "score": 13
+ },
+ "Bang My Box: The Robin Byrd Story|2026": {
+  "id": "tt41702551",
+  "title": "Bang My Box: The Robin Byrd Story",
+  "year": 2026,
+  "type": "movie",
+  "score": 13
+ },
+ "The Dark Wizard|2026": {
+  "id": "tt39656291",
+  "title": "The Dark Wizard",
+  "year": 2026,
+  "type": "tvSeries",
+  "score": 13
+ },
+ "Savage Mountain|": {
+  "id": "tt43338428",
+  "title": "Savage Mountain",
+  "year": 2026,
+  "type": "movie",
+  "score": 7
+ },
+ "2000 Meters to Andriivka|2025": {
+  "id": "tt34964205",
+  "title": "2000 Meters to Andriivka",
+  "year": 2025,
+  "type": "movie",
+  "score": 13
+ },
+ "20 days in Mariupol|2023": {
+  "id": "tt24082438",
+  "title": "20 Days in Mariupol",
+  "year": 2023,
+  "type": "movie",
+  "score": 13
+ },
+ "Louis Theroux: The Settlers|2025": {
+  "id": "tt36640622",
+  "title": "Louis Theroux: The Settlers",
+  "year": 2025,
+  "type": "tvMovie",
+  "score": 13
+ },
+ "Fukushima: A Nuclear Disaster|": {
+  "id": "tt35919514",
+  "title": "Fukushima: A Nuclear Nightmare",
+  "year": 2026,
+  "type": "movie",
+  "score": 1
+ },
+ "The Perfect Neighbor|2025": {
+  "id": "tt34962891",
+  "title": "The Perfect Neighbor",
+  "year": 2025,
+  "type": "movie",
+  "score": 13
+ },
+ "Deaf President Now!|2025": {
+  "id": "tt34965967",
+  "title": "Deaf President Now!",
+  "year": 2025,
+  "type": "movie",
+  "score": 13
+ },
+ "Black Box Diaries|2024": {
+  "id": "tt30227076",
+  "title": "Black Box Diaries",
+  "year": 2024,
+  "type": "movie",
+  "score": 13
+ },
+ "Mr Nobody Against Putin|2025": {
+  "id": "tt34965515",
+  "title": "Mr. Nobody Against Putin",
+  "year": 2025,
+  "type": "movie",
+  "score": 13
+ },
+ "Knife Edge: Chasing Michelin Stars|2025": {
+  "id": "tt36935784",
+  "title": "Knife Edge: Chasing Michelin Stars",
+  "year": 2025,
+  "type": "tvSeries",
+  "score": 13
+ },
+ "The Pigeon Tunnel|2023": {
+  "id": "tt28486633",
+  "title": "The Pigeon Tunnel",
+  "year": 2023,
+  "type": "movie",
+  "score": 13
+ },
+ "Secret Mall Apartment|2024": {
+  "id": "tt21221386",
+  "title": "Secret Mall Apartment",
+  "year": 2024,
+  "type": "movie",
+  "score": 13
+ },
+ "Predators|2025": {
+  "id": "tt34963732",
+  "title": "Predators",
+  "year": 2025,
+  "type": "movie",
+  "score": 13
+ },
+ "Reality Check: Inside America's Next Top Model|2025": {
+  "id": "tt39398591",
+  "title": "Reality Check: Inside America's Next Top Model",
+  "year": 2026,
+  "type": "tvMiniSeries",
+  "score": 10
+ },
+ "Jerry Springer: Fights, Camera, Action|2025": {
+  "id": "tt34269065",
+  "title": "Jerry Springer: Fights, Camera, Action",
+  "year": 2025,
+  "type": "tvMiniSeries",
+  "score": 13
+ },
+ "Savage Mountain|2026": {
+  "id": "tt43338428",
+  "title": "Savage Mountain",
+  "year": 2026,
+  "type": "movie",
+  "score": 13
+ },
+ "Reality Check: Inside America's Next Top Model|2026": {
+  "id": "tt39398591",
+  "title": "Reality Check: Inside America's Next Top Model",
+  "year": 2026,
+  "type": "tvMiniSeries",
+  "score": 13
  }
 }

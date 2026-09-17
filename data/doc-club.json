@@ -50,6 +50,11 @@
      "title": "My Life Directed by Nicolas Winding Refn",
      "year": "2019",
      "stars": 1
+    },
+    {
+     "title": "Jaws at 50",
+     "year": "2025",
+     "stars": 3
     }
    ]
   },
@@ -548,6 +553,11 @@
      "title": "Kings From Queens: The Run-DMC Story",
      "year": "2024",
      "stars": 1
+    },
+    {
+     "title": "One to One: John Lennon & Yoko Ono",
+     "year": "2024",
+     "stars": null
     }
    ]
   },
@@ -874,6 +884,11 @@
      "title": "Red Penguins: Murder, Money and Ice Hockey",
      "year": "2020",
      "stars": 2
+    },
+    {
+     "title": "Grand Theft Hamlet",
+     "year": "2024",
+     "stars": 3
     }
    ]
   },
@@ -947,6 +962,11 @@
      "title": "Brainwashed: Sex-Camera-Power",
      "year": null,
      "stars": 2
+    },
+    {
+     "title": "The Alabama Solution",
+     "year": "2025",
+     "stars": 3
     }
    ]
   },
@@ -1283,6 +1303,16 @@
      "title": "Bill Cunningham: New York",
      "year": "2010",
      "stars": 3
+    },
+    {
+     "title": "Pee-wee as Himself",
+     "year": "2025",
+     "stars": 3
+    },
+    {
+     "title": "Bang My Box: The Robin Byrd Story",
+     "year": "2026",
+     "stars": 2
     }
    ]
   },
@@ -1449,6 +1479,16 @@
     {
      "title": "Alpinist",
      "year": "2020",
+     "stars": 2
+    },
+    {
+     "title": "The Dark Wizard",
+     "year": "2026",
+     "stars": 3
+    },
+    {
+     "title": "Savage Mountain",
+     "year": "2026",
      "stars": 2
     }
    ]
@@ -1779,6 +1819,11 @@
      "title": "Retrograde",
      "year": "2022",
      "stars": 3
+    },
+    {
+     "title": "2000 Meters to Andriivka",
+     "year": "2025",
+     "stars": 3
     }
    ]
   },
@@ -1821,7 +1866,12 @@
     },
     {
      "title": "20 days in Mariupol",
-     "year": null,
+     "year": "2023",
+     "stars": 3
+    },
+    {
+     "title": "Louis Theroux: The Settlers",
+     "year": "2025",
      "stars": 3
     }
    ]
@@ -1957,6 +2007,11 @@
      "title": "Britain's Nuclear Bomb scandal",
      "year": "2024",
      "stars": 2
+    },
+    {
+     "title": "Fukushima: A Nuclear Disaster",
+     "year": null,
+     "stars": 1
     }
    ]
   },
@@ -2121,6 +2176,11 @@
      "title": "The Witness",
      "year": "2015",
      "stars": 2
+    },
+    {
+     "title": "The Perfect Neighbor",
+     "year": "2025",
+     "stars": null
     }
    ]
   },
@@ -2256,6 +2316,16 @@
      "title": "Telemarketers (2023)",
      "year": null,
      "stars": 3
+    },
+    {
+     "title": "Deaf President Now!",
+     "year": "2025",
+     "stars": 3
+    },
+    {
+     "title": "Black Box Diaries",
+     "year": "2024",
+     "stars": 3
     }
    ]
   },
@@ -2376,6 +2446,11 @@
     {
      "title": "The revolution will not be televised",
      "year": "2003",
+     "stars": 3
+    },
+    {
+     "title": "Mr Nobody Against Putin",
+     "year": "2025",
      "stars": 3
     }
    ]
@@ -2498,6 +2573,11 @@
      "title": "Tim’s Vermeer",
      "year": "2013",
      "stars": 3
+    },
+    {
+     "title": "Knife Edge: Chasing Michelin Stars",
+     "year": "2025",
+     "stars": 3
     }
    ]
   },
@@ -2564,6 +2644,11 @@
      "title": "In Search of Dracula with Mark Gatiss",
      "year": "2020",
      "stars": 3
+    },
+    {
+     "title": "The Pigeon Tunnel",
+     "year": "2023",
+     "stars": 1
     }
    ]
   },
@@ -2632,127 +2717,34 @@
      "title": "Flee",
      "year": "2021",
      "stars": 3
+    },
+    {
+     "title": "Secret Mall Apartment",
+     "year": "2024",
+     "stars": 2
     }
    ]
   },
   {
-   "title": "To be catagorised…",
-   "blurb": [],
+   "title": "Reality TV, reconsidered",
+   "blurb": [
+    "Formats that once felt like harmless television, reopened years later by the people who were in them. What looked like entertainment at the time turns out to have had a cost, and these films go looking for who paid it."
+   ],
    "films": [
     {
      "title": "Predators",
-     "year": null,
+     "year": "2025",
      "stars": null
     },
     {
-     "title": "Apollo 11",
-     "year": null,
+     "title": "Reality Check: Inside America's Next Top Model",
+     "year": "2026",
      "stars": null
     },
     {
-     "title": "Pigeon tunnel",
-     "year": null,
-     "stars": null
-    },
-    {
-     "title": "2000 Meters to Andriivka",
-     "year": null,
-     "stars": null
-    },
-    {
-     "title": "Black box diaries",
-     "year": null,
-     "stars": null
-    },
-    {
-     "title": "Deaf president now",
-     "year": null,
-     "stars": null
-    },
-    {
-     "title": "Grand theft hamlet",
-     "year": null,
-     "stars": null
-    },
-    {
-     "title": "One to one",
-     "year": null,
-     "stars": null
-    },
-    {
-     "title": "Pee wee as himself",
-     "year": null,
-     "stars": null
-    },
-    {
-     "title": "Secret mall apartment",
-     "year": null,
-     "stars": null
-    },
-    {
-     "title": "The Alabama solution",
-     "year": null,
-     "stars": null
-    },
-    {
-     "title": "Mr nobody against putin",
-     "year": null,
-     "stars": null
-    },
-    {
-     "title": "Savage mountain",
-     "year": null,
-     "stars": null
-    },
-    {
-     "title": "Perfect neighbor",
-     "year": null,
-     "stars": null
-    },
-    {
-     "title": "Bang my box",
-     "year": null,
-     "stars": null
-    },
-    {
-     "title": "Burden of dreams",
-     "year": null,
-     "stars": null
-    },
-    {
-     "title": "Fukushima a nuclear disaster",
-     "year": null,
-     "stars": null
-    },
-    {
-     "title": "Dark wizard",
-     "year": null,
-     "stars": null
-    },
-    {
-     "title": "Knife edge",
-     "year": null,
-     "stars": null
-    },
-    {
-     "title": "Reality check: inside Americas next top model",
-     "year": null,
-     "stars": null
-    },
-    {
-     "title": "Louis Theroux: the settlers",
-     "year": null,
-     "stars": null
-    },
-    {
-     "title": "20 days in mariupol",
-     "year": null,
-     "stars": null
-    },
-    {
-     "title": "Jaws at 50",
-     "year": null,
-     "stars": null
+     "title": "Jerry Springer: Fights, Camera, Action",
+     "year": "2025",
+     "stars": 3
     }
    ]
   }
