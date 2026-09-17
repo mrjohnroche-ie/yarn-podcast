@@ -36,6 +36,17 @@ const seasons = site.seasons;
    included. Anything else that used to resolve is redirected in vercel.json. */
 const seasonOf = (n) => seasons.find((s) => s.n === n);
 
+/* Short form is derived rather than hand-tagged: anything under twenty
+   minutes gets it, so a new episode sorts itself. */
+const SHORT_FORM_SECONDS = 20 * 60;
+for (const ep of episodes) {
+  const parts = (ep.duration || '').split(':').map(Number);
+  if (parts.length < 2 || parts.some(isNaN)) continue;
+  while (parts.length < 3) parts.unshift(0);
+  const seconds = parts[0] * 3600 + parts[1] * 60 + parts[2];
+  if (seconds < SHORT_FORM_SECONDS && !ep.tags.includes('short-form')) ep.tags.push('short-form');
+}
+
 /* The stylesheet and the script are cached hard at the edge, so their URLs
    carry a hash of their contents: a deploy that changes them changes the URL. */
 const stamp = createHash('sha1')

@@ -133,6 +133,10 @@
     {
       "slug": "disability",
       "label": "Disability"
+    },
+    {
+      "slug": "short-form",
+      "label": "Short form"
     }
   ]
 }
