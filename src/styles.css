@@ -763,3 +763,88 @@ a { color: inherit; }
 
 /* Scroll sentinel for the header state - needs a box for IntersectionObserver. */
 #hero-end { display: block; height: 1px; }
+
+/* ---- typographic tiles (extras with no cover art) -------------------- */
+
+.card-art--tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 6px;
+  padding: 18px;
+  background:
+    radial-gradient(120% 90% at 20% 0%, rgba(143,129,255,0.35) 0%, transparent 60%),
+    linear-gradient(160deg, #241a6b 0%, #120d38 100%);
+  background-color: var(--ink-2);
+}
+
+.card-art--tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.6) 0.7px, transparent 0.8px);
+  background-size: 7px 7px;
+  opacity: 0.16;
+}
+
+.tile-kicker, .tile-label { position: relative; z-index: 1; }
+
+.tile-kicker {
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--violet-lit);
+}
+
+.tile-label {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.4vw, 26px);
+  line-height: 1.1;
+  color: var(--paper);
+}
+
+.card a:hover .card-art--tile { border-color: rgba(143,129,255,0.55); }
+
+/* ---- video embed ------------------------------------------------------ */
+
+.player--video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
+/* ---- press list ------------------------------------------------------- */
+
+.press-list { list-style: none; margin: 4px 0 0; padding: 0; }
+
+.press-list li { border-bottom: 1px solid rgba(255,255,255,0.09); }
+
+.press-list a {
+  display: grid;
+  grid-template-columns: minmax(130px, 170px) 1fr;
+  gap: 4px 18px;
+  align-items: baseline;
+  padding: 14px 0;
+  text-decoration: none;
+  transition: color .15s ease;
+}
+
+.press-outlet {
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--violet-lit);
+}
+
+.press-headline { color: #d5d1f2; font-size: 16px; line-height: 1.45; }
+
+.press-list a:hover .press-headline { color: var(--paper); text-decoration: underline; }
+
+.episode--no-art { grid-template-columns: minmax(0, 1fr); max-width: 780px; }
+
+@media (max-width: 620px) {
+  .press-list a { grid-template-columns: 1fr; gap: 2px; }
+  .press-headline { font-size: 15px; }
+}

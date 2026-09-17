@@ -21,6 +21,7 @@ const DIST = path.join(ROOT, 'dist');
 const site = JSON.parse(await readFile(path.join(ROOT, 'data/site.json'), 'utf8'));
 const data = JSON.parse(await readFile(path.join(ROOT, 'data/episodes.json'), 'utf8'));
 const docClub = JSON.parse(await readFile(path.join(ROOT, 'data/doc-club.json'), 'utf8'));
+const press = JSON.parse(await readFile(path.join(ROOT, 'data/press.json'), 'utf8'));
 const episodes = data.episodes;
 const extras = data.extras;
 const seasons = site.seasons;
@@ -204,6 +205,7 @@ function footer(rel) {
 /* ---- cards ----------------------------------------------------------- */
 
 function cardMeta(ep) {
+  if (ep.tile) return '';
   const bits = [ep.n ? `Yarn ${String(ep.n).padStart(2, '0')}` : 'Extra'];
   if (ep.durationText) bits.push(esc(ep.durationText));
   else if (ep.parts && ep.parts.length) bits.push(`${ep.parts.length} parts`);
@@ -214,14 +216,24 @@ function cardMeta(ep) {
 }
 
 function card(ep, rel, hrefBase) {
-  const thumb = ep.art.replace('assets/art/', 'assets/thumb/');
   const blurb = (ep.description && ep.description[0]) || '';
-  return `<li class="card" data-season="${ep.season || 'extras'}">
-  <a href="${rel}${hrefBase}/${ep.slug}/index.html">
-    <div class="card-art">
-      <img src="${rel}${thumb}" alt="Cover art for ${esc(ep.title)}" loading="lazy" width="460" height="460">
+  const href = ep.href ? `${rel}${ep.href}` : `${rel}${hrefBase}/${ep.slug}/index.html`;
+  /* Not everything in the extras has cover art - those get a typographic tile
+     rather than a borrowed or invented image. */
+  const art = ep.tile
+    ? `<div class="card-art card-art--tile">
+      <span class="tile-kicker">${esc(ep.tile.kicker)}</span>
+      <span class="tile-label">${esc(ep.tile.label)}</span>
+    </div>`
+    : `<div class="card-art">
+      <img src="${rel}${ep.art.replace('assets/art/', 'assets/thumb/')}" alt="Cover art for ${esc(
+        ep.title
+      )}" loading="lazy" width="460" height="460">
       <span class="card-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg></span>
-    </div>
+    </div>`;
+  return `<li class="card" data-season="${ep.season || 'extras'}">
+  <a href="${href}">
+    ${art}
     <p class="card-meta">${cardMeta(ep)}</p>
     <h3 class="card-title">${esc(ep.title)}</h3>
     <p class="card-blurb">${esc(blurb)}</p>
@@ -281,7 +293,7 @@ ${header('', true)}
     <div class="wrap">
       <div class="section-head">
         <h2 class="section-title">Extras</h2>
-        <p class="section-note">Side projects, a walking tour and podcast production.</p>
+        <p class="section-note">${esc(site.extrasBlurb)}</p>
       </div>
       <ul class="grid" style="margin-top:26px">
         ${extras.map((e) => card(e, '', 'extras')).join('\n        ')}
@@ -320,6 +332,10 @@ function episodePage(ep, prev, next, { rel, hrefBase }) {
       .join('\n    ');
   } else if (ep.spotify) {
     players = `<div class="player">${spotifyEmbed(ep.spotify, ep.title)}</div>`;
+  } else if (ep.youtube) {
+    players = `<div class="player player--video"><iframe src="https://www.youtube-nocookie.com/embed/${esc(
+      ep.youtube
+    )}" title="${esc(ep.title)} on YouTube" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
   } else if (ep.note) {
     players = `<p class="player-note">${esc(ep.note)}</p>`;
   }
@@ -328,7 +344,9 @@ function episodePage(ep, prev, next, { rel, hrefBase }) {
     ? `<ul class="episode-links">${ep.links
         .map(
           (l) =>
-            `<li><a class="text-link" href="${esc(l.url)}" target="_blank" rel="noopener">${icon('link')}${esc(l.label)}</a></li>`
+            `<li><a class="text-link" href="${esc(l.url)}"${
+              l.url.startsWith('http') ? ' target="_blank" rel="noopener"' : ''
+            }>${icon('link')}${esc(l.label)}</a></li>`
         )
         .join('')}</ul>`
     : '';
@@ -355,6 +373,16 @@ function episodePage(ep, prev, next, { rel, hrefBase }) {
 
   const description = (ep.description && ep.description[0]) || site.intro;
   const isSeries = Boolean(ep.parts && ep.parts.length);
+  const pressList = ep.press
+    ? `<ul class="press-list">${press
+        .map(
+          (item) =>
+            `<li><a href="${esc(item.url)}" target="_blank" rel="noopener"><span class="press-outlet">${esc(
+              item.outlet
+            )}</span><span class="press-headline">${esc(item.headline)}</span></a></li>`
+        )
+        .join('')}</ul>`
+    : '';
   const body = `<div class="episode-body">
         ${(ep.description || []).map((p) => `<p>${esc(p)}</p>`).join('\n        ')}
       </div>`;
@@ -364,27 +392,36 @@ function episodePage(ep, prev, next, { rel, hrefBase }) {
     description,
     rel,
     canonical: `${site.url}/${hrefBase}/${ep.slug}/`,
-    image: `${site.url}/${ep.art}`,
+    image: `${site.url}/${ep.art || 'assets/cover.jpg'}`,
     ogType: 'article',
   })}
 ${header(rel)}
 <main class="wrap">
   <a class="back-link" href="${rel}index.html">&larr; Episodes</a>
-  <article class="episode">
-    <div class="episode-art">
+  <article class="episode${ep.art ? '' : ' episode--no-art'}">
+    ${
+      ep.art
+        ? `<div class="episode-art">
       <img src="${rel}${ep.art}" alt="Cover art for ${esc(ep.title)}" width="900" height="900" fetchpriority="high">
-    </div>
+    </div>`
+        : ''
+    }
     <div>
       <p class="episode-eyebrow">${eyebrow.map(esc).join(' <span class="dot">/</span> ')}</p>
       <h1 class="episode-title">${esc(ep.title)}</h1>
       ${isSeries ? body : players}
       ${isSeries ? players : body}
       ${credits}
+      ${pressList}
       ${links}
-      <div class="listen-block">
+      ${
+        ep.press
+          ? ''
+          : `<div class="listen-block">
         <h2>Also listen on</h2>
         ${platformList(episodePlatforms(ep), ' platforms--left')}
-      </div>
+      </div>`
+      }
     </div>
   </article>
   ${pager}
@@ -494,6 +531,7 @@ for (let i = 0; i < episodes.length; i++) {
 }
 
 for (const ex of extras) {
+  if (ex.href) continue;
   const dir = path.join(DIST, 'extras', ex.slug);
   await mkdir(dir, { recursive: true });
   await writeFile(
@@ -541,7 +579,7 @@ const urls = [
   ...seasons.map((se) => `${site.url}/${se.slug}/`),
   `${site.url}/extras/`,
   ...episodes.map((e) => `${site.url}/episodes/${e.slug}/`),
-  ...extras.map((e) => `${site.url}/extras/${e.slug}/`),
+  ...extras.filter((e) => !e.href).map((e) => `${site.url}/extras/${e.slug}/`),
   `${site.url}/documentary-club/`,
 ];
 await writeFile(

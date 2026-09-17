@@ -689,8 +689,7 @@
     "Podcast Website Setup - A professional, user-friendly site to showcase episodes and engage listeners.",
     "With years of experience in storytelling and audio craftsmanship, I ensure your podcast sounds incredible while keeping your workflow simple.",
     "📩 Get in touch to start your podcast journey today!",
-    "Email: yarnstorypodcast (at) gmail.com",
-    "or DM @yarnStoryPod on Instagram."
+    "Email: yarnstorypodcast (at) gmail.com"
    ],
    "art": "assets/art/yarn-podcast-production.jpg",
    "links": [],
@@ -736,6 +735,58 @@
    "date": "2025-10-07",
    "duration": "01:15:50",
    "durationText": "1h 16m"
+  },
+  {
+   "slug": "lefty-motion-comic",
+   "title": "Lefty: The Motion Comic",
+   "description": [
+    "An animated comic book version of Yarn 05, Lefty, the story of a left leg with a mind of its own.",
+    "Watch it on YouTube, or listen to the original episode."
+   ],
+   "art": "assets/art/lefty-motion-comic.jpg",
+   "youtube": "zm09g8y2AX4",
+   "links": [
+    {
+     "label": "Listen to Yarn 05, Lefty",
+     "url": "../../episodes/lefty/index.html"
+    },
+    {
+     "label": "Full transcript",
+     "url": "https://medium.com/@mrjohnroche_42475/yarn-05-lefty-281996a9b776"
+    }
+   ],
+   "spotify": null,
+   "parts": []
+  },
+  {
+   "slug": "press",
+   "title": "Press",
+   "description": [
+    "Reviews, features and awards, from The Guardian to the Irish Examiner."
+   ],
+   "tile": {
+    "kicker": "Coverage",
+    "label": "Press"
+   },
+   "press": true,
+   "links": [],
+   "spotify": null,
+   "parts": []
+  },
+  {
+   "slug": "documentary-club",
+   "title": "Yarn Documentary Club",
+   "description": [
+    "A personal list of the best documentaries made since 1985, 448 of them, grouped into 61 themes and rated out of three."
+   ],
+   "tile": {
+    "kicker": "448 films",
+    "label": "Documentary Club"
+   },
+   "href": "documentary-club/index.html",
+   "links": [],
+   "spotify": null,
+   "parts": []
   }
  ]
 }
