@@ -906,6 +906,28 @@
    "parts": []
   },
   {
+   "slug": "chancin-me-arm-video",
+   "title": "Chancin' Me Arm: The Video Version",
+   "description": [
+    "The full video version of Yarn 12, a dramatic monologue performed by Lorcan Cranitch, with Shane Sheehan's illustrations.",
+    "Drinkin', workin', emigratin' and boilin' spuds in hot tar. The life of a chancer."
+   ],
+   "art": "assets/art/chancin-me-arm-video.jpg",
+   "youtube": "yN7OyCyXykE",
+   "links": [
+    {
+     "label": "Listen to Yarn 12, Chancin' Me Arm",
+     "url": "../../episodes/chancin-me-arm/index.html"
+    },
+    {
+     "label": "Full transcript",
+     "url": "https://medium.com/@mrjohnroche_42475/yarn-12-chancin-me-arm-6b89c5154782"
+    }
+   ],
+   "spotify": null,
+   "parts": []
+  },
+  {
    "slug": "press",
    "title": "Press",
    "description": [
