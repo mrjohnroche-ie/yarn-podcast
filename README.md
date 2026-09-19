@@ -120,6 +120,14 @@ feature is on, and 404s harmlessly on localhost.
 It is cookieless and needs no consent banner, which is why it is here
 rather than Google Analytics.
 
+**Leaving your own visits out.** Load any page with `?no-analytics` once in
+a browser - `https://www.yarnpodcast.com/?no-analytics` - and that browser
+stops being counted. It works by setting a flag in localStorage that a
+`beforeSend` handler checks: the analytics script drops any event whose
+beforeSend returns null, so nothing is sent at all. `?analytics` undoes it.
+It is per browser and per device, so do it on the phone as well as the
+laptop, and again if you clear site data.
+
 `analytics.googleId` is the other option, unused: put a GA4 measurement id
 (`G-XXXXXXXXXX`) in it and the gtag snippet joins the head of every page.
 GA4 does set cookies, so EU visitors would need a consent banner first, and

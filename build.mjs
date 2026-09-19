@@ -159,7 +159,27 @@ function head({ title, description, rel, canonical, image, ogType = 'website' })
 <meta name="twitter:card" content="summary_large_image">
 ${
   site.analytics && site.analytics.vercel
-    ? '<script defer src="/_vercel/insights/script.js"></script>'
+    ? `<script>
+  /* Your own visits: load ?no-analytics once in a browser and it stops
+     counting there for good, ?analytics turns it back on. The analytics
+     script drops any event whose beforeSend returns null. */
+  window.vaq = window.vaq || [];
+  try {
+    var yarnQuery = new URLSearchParams(location.search);
+    if (yarnQuery.has('no-analytics')) localStorage.setItem('yarn-no-analytics', '1');
+    if (yarnQuery.has('analytics')) localStorage.removeItem('yarn-no-analytics');
+  } catch (e) {}
+  window.vaq.push(['beforeSend', function (event) {
+    try {
+      if (!localStorage.getItem('yarn-no-analytics')) return event;
+      console.info('Yarn: analytics off in this browser. Load ?analytics to undo.');
+      return null;
+    } catch (e) {
+      return event;
+    }
+  }]);
+</script>
+<script defer src="/_vercel/insights/script.js"></script>`
     : ''
 }
 ${
