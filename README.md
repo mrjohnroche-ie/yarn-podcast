@@ -111,18 +111,19 @@ ships a fresh build.
 
 ## Analytics
 
-`data/site.json` has an `analytics.googleId` field. Put a GA4 measurement id
-(`G-XXXXXXXXXX`) in it and the gtag snippet goes into the head of every page
-on the next build; leave it empty and no analytics script is served at all.
+Vercel Web Analytics. Two halves: `analytics.vercel` in `data/site.json`
+puts `/_vercel/insights/script.js` in the head of every page, and Web
+Analytics has to be enabled for the project in the Vercel dashboard. Both
+are needed - the script only records anything on a deployment where the
+feature is on, and 404s harmlessly on localhost.
 
-```json
-"analytics": { "googleId": "G-XXXXXXXXXX" }
-```
+It is cookieless and needs no consent banner, which is why it is here
+rather than Google Analytics.
 
-GA4 sets cookies and sends visitor data to Google, so for EU visitors it
-needs a consent banner to be lawful. There is no banner on the site. The
-alternative is Vercel Web Analytics, which is cookieless, needs no banner,
-and is a toggle in the Vercel dashboard.
+`analytics.googleId` is the other option, unused: put a GA4 measurement id
+(`G-XXXXXXXXXX`) in it and the gtag snippet joins the head of every page.
+GA4 does set cookies, so EU visitors would need a consent banner first, and
+the site has none.
 
 ## Notes
 

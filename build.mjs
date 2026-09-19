@@ -158,6 +158,11 @@ function head({ title, description, rel, canonical, image, ogType = 'website' })
 <meta property="og:image" content="${esc(image)}">
 <meta name="twitter:card" content="summary_large_image">
 ${
+  site.analytics && site.analytics.vercel
+    ? '<script defer src="/_vercel/insights/script.js"></script>'
+    : ''
+}
+${
   site.analytics && site.analytics.googleId
     ? `<script async src="https://www.googletagmanager.com/gtag/js?id=${esc(site.analytics.googleId)}"></script>
 <script>
