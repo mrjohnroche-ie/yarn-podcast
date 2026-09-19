@@ -157,6 +157,17 @@ function head({ title, description, rel, canonical, image, ogType = 'website' })
 <meta property="og:url" content="${esc(canonical)}">
 <meta property="og:image" content="${esc(image)}">
 <meta name="twitter:card" content="summary_large_image">
+${
+  site.analytics && site.analytics.googleId
+    ? `<script async src="https://www.googletagmanager.com/gtag/js?id=${esc(site.analytics.googleId)}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '${esc(site.analytics.googleId)}');
+</script>`
+    : ''
+}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Inter:wght@400;500;600;700&display=swap">

@@ -142,5 +142,8 @@
       "slug": "short-form",
       "label": "Short form"
     }
-  ]
+  ],
+  "analytics": {
+    "googleId": ""
+  }
 }

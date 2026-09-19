@@ -109,6 +109,21 @@ vercel deploy --cwd yarn --prod
 Vercel runs `node build.mjs` itself and serves `dist/`, so a deploy always
 ships a fresh build.
 
+## Analytics
+
+`data/site.json` has an `analytics.googleId` field. Put a GA4 measurement id
+(`G-XXXXXXXXXX`) in it and the gtag snippet goes into the head of every page
+on the next build; leave it empty and no analytics script is served at all.
+
+```json
+"analytics": { "googleId": "G-XXXXXXXXXX" }
+```
+
+GA4 sets cookies and sends visitor data to Google, so for EU visitors it
+needs a consent banner to be lawful. There is no banner on the site. The
+alternative is Vercel Web Analytics, which is cookieless, needs no banner,
+and is a toggle in the Vercel dashboard.
+
 ## Notes
 
 - Content was lifted from the live Squarespace site, the podcast RSS feed and
