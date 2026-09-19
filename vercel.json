@@ -25,6 +25,36 @@
   ],
   "redirects": [
     {
+      "source": "/s/lefty-part-one.pdf",
+      "destination": "/episodes/lefty/",
+      "permanent": true
+    },
+    {
+      "source": "/lefty-transcript",
+      "destination": "/episodes/lefty/",
+      "permanent": true
+    },
+    {
+      "source": "/yarn-04-the-siren",
+      "destination": "/episodes/the-siren/",
+      "permanent": true
+    },
+    {
+      "source": "/the-boxer-and-the-bomber",
+      "destination": "/episodes/the-boxer-and-the-bomber/",
+      "permanent": true
+    },
+    {
+      "source": "/bricklane",
+      "destination": "/episodes/brick-lane/",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/#about",
+      "permanent": true
+    },
+    {
       "source": "/season-3/",
       "destination": "/episodes/how-not-to-be-a-spy/",
       "permanent": true

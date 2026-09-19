@@ -92,6 +92,15 @@ today still resolves here. Three mechanisms:
 Adding an episode does not need anything here. Only removing or renaming an
 existing page does: if you change a slug, add a redirect from the old one.
 
+The Squarespace sitemap did not list everything the site ever had. The
+Wayback Machine's index does, and it turned up five more live URLs from
+earlier versions - /about, /bricklane, /the-boxer-and-the-bomber,
+/yarn-04-the-siren and /lefty-transcript - which are redirected too:
+
+```bash
+curl -s "http://web.archive.org/cdx/search/cdx?url=yarnpodcast.com*&fl=original,statuscode&collapse=urlkey&limit=400"
+```
+
 To check the lot after a change, run every legacy path against the site:
 
 ```bash
