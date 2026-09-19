@@ -146,5 +146,19 @@
   "analytics": {
     "vercel": true,
     "googleId": ""
-  }
+  },
+  "startHere": [
+    {
+      "slug": "hotel-on-the-edge-of-europe",
+      "why": "Bronze at the Signal Awards. An island hotel off the west coast, and what happens to a place when the thing at its centre changes."
+    },
+    {
+      "slug": "lefty",
+      "why": "A left leg with a mind of its own. Funny, then not. Third Coast picked it up for Re:Sound."
+    },
+    {
+      "slug": "chernobyl",
+      "why": "Two days inside the exclusion zone, staying the night in the only hotel still working there."
+    }
+  ]
 }

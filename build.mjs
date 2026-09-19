@@ -278,8 +278,8 @@ function cardMeta(ep) {
   return bits.join(sep) + date;
 }
 
-function card(ep, rel, hrefBase) {
-  const blurb = (ep.description && ep.description[0]) || '';
+function card(ep, rel, hrefBase, note) {
+  const blurb = note || (ep.description && ep.description[0]) || '';
   const external = Boolean(ep.href && ep.href.startsWith('http'));
   const href = ep.href
     ? external
@@ -300,7 +300,7 @@ function card(ep, rel, hrefBase) {
     </div>
     <p class="card-meta">${cardMeta(ep)}</p>
     <h3 class="card-title">${esc(ep.title)}</h3>
-    <p class="card-blurb">${esc(blurb)}</p>
+    <p class="card-blurb${note ? ' card-blurb--note' : ''}">${esc(blurb)}</p>
   </a>
 </li>`;
 }
@@ -345,10 +345,23 @@ ${header('', true)}
     </div>
   </section>
 
+  <section class="section" id="start-here">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">Start here</h2>
+      </div>
+      <ul class="grid grid--start">
+        ${site.startHere
+          .map((pick) => card(episodes.find((e) => e.slug === pick.slug), '', 'episodes', pick.why))
+          .join('\n        ')}
+      </ul>
+    </div>
+  </section>
+
   <section class="section" id="episodes">
     <div class="wrap">
       <div class="section-head">
-        <h2 class="section-title">Episodes</h2>
+        <h2 class="section-title">All episodes</h2>
       </div>
       <div class="filters" role="group" aria-label="Filter episodes by subject">
       ${filters}

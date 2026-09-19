@@ -935,3 +935,14 @@ a { color: inherit; }
   text-transform: uppercase;
   color: var(--violet-lit);
 }
+
+/* ---- start here ------------------------------------------------------- */
+
+#start-here { padding-bottom: 0; }
+
+.grid--start { grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+
+.card-blurb--note {
+  color: #cfcaf4;
+  -webkit-line-clamp: 3;
+}
