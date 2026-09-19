@@ -279,7 +279,7 @@ function cardMeta(ep) {
 }
 
 function card(ep, rel, hrefBase, note) {
-  const blurb = note || (ep.description && ep.description[0]) || '';
+  const blurb = note || ep.cardBlurb || (ep.description && ep.description[0]) || '';
   const external = Boolean(ep.href && ep.href.startsWith('http'));
   const href = ep.href
     ? external
@@ -472,7 +472,7 @@ function episodePage(ep, prev, next, { rel, hrefBase }) {
   </section>`
     : '';
 
-  const description = (ep.description && ep.description[0]) || site.intro;
+  const description = ep.cardBlurb || (ep.description && ep.description[0]) || site.intro;
   const isSeries = Boolean(ep.parts && ep.parts.length);
   const pressList = ep.press
     ? `<ul class="press-list">${press
@@ -480,7 +480,9 @@ function episodePage(ep, prev, next, { rel, hrefBase }) {
           (item) =>
             `<li><a href="${esc(item.url)}" target="_blank" rel="noopener"><span class="press-outlet">${esc(
               item.outlet
-            )}</span><span class="press-headline">${esc(item.headline)}</span></a></li>`
+            )}</span><span class="press-headline">${esc(item.headline)}${
+              item.quote ? `<span class="press-quote">${esc(item.quote)}</span>` : ''
+            }</span></a></li>`
         )
         .join('')}</ul>`
     : '';

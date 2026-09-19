@@ -1,14 +1,66 @@
 [
- { "outlet": "The Guardian", "headline": "Best podcasts of the week", "url": "https://www.theguardian.com/tv-and-radio/2018/aug/17/blumhouse-political-pod-get-out-podcasts-of-the-week" },
- { "outlet": "Irish Independent", "headline": "Podcast reviews: Grafters and trailblazers, a trio of unsung and everyday heroes, told with authority and panache", "url": "https://www.independent.ie/podcasts/podcast-reviews-grafters-and-trailblazers-a-trio-of-unsung-and-everyday-heroes-told-with-authority-and-panache/a697578131.html" },
- { "outlet": "Irish Examiner", "headline": "Podcast Corner: Tale of Doonmore Hotel on Inishbofin makes for interesting Yarn", "url": "https://www.irishexaminer.com/lifestyle/artsandculture/arid-41626279.html" },
- { "outlet": "Irish Examiner", "headline": "Podcast Corner: A look behind the scenes at serving on an Irish jury", "url": "https://www.irishexaminer.com/lifestyle/artsandculture/arid-40729236.html" },
- { "outlet": "Third Coast Festival", "headline": "Re:sound #269 Lefty Disco", "url": "https://thirdcoastfestival.org/feature/lefty-disco" },
- { "outlet": "Discover Pods", "headline": "Podcast Spotlight: Disability, A Parallel History, a Yarn Miniseries", "url": "https://discoverpods.com/podcast-spotlight-disability-a-parallel-history-a-yarn-miniseries/" },
- { "outlet": "Irish Central", "headline": "LISTEN: Our top 5 Irish podcasts for February", "url": "https://www.irishcentral.com/culture/entertainment/irish-podcast-recommendation-february" },
- { "outlet": "Podcasts and Radio", "headline": "7 podcasts about World War II for history lovers", "url": "https://www.podcastandradio.co.uk/best-podcasts-about-world-war-two/" },
- { "outlet": "The Kilkenny People", "headline": "Kilkenny man nominated in National Podcast Awards", "url": "https://www.kilkennypeople.ie/news/home/871705/kilkenny-man-nominated-in-national-podcast-awards.html" },
- { "outlet": "Signal Awards", "headline": "Winner: Best Indie Podcast, Individual Episode, Bronze 2025", "url": "https://www.signalaward.com/winners/details/#yarn-a-story-podcast/hotel-on-the-edge-of-europe/0/616696" },
- { "outlet": "Signal Awards", "headline": "Signal Awards unveil 2025 finalists, spotlighting the icons and creators defining culture today", "url": "https://www.signalaward.com/2025/09/22/2025-finalists/" },
- { "outlet": "Irish Podcast Awards", "headline": "Winner: Best Factual Podcast 2022", "url": "https://www.theirishpodcastawards.ie/enter/winners/" }
+ {
+  "outlet": "The Guardian",
+  "headline": "Best podcasts of the week",
+  "url": "https://www.theguardian.com/tv-and-radio/2018/aug/17/blumhouse-political-pod-get-out-podcasts-of-the-week"
+ },
+ {
+  "outlet": "Irish Independent",
+  "headline": "Podcast reviews: Grafters and trailblazers, a trio of unsung and everyday heroes, told with authority and panache",
+  "url": "https://www.independent.ie/podcasts/podcast-reviews-grafters-and-trailblazers-a-trio-of-unsung-and-everyday-heroes-told-with-authority-and-panache/a697578131.html",
+  "quote": "Even the website is gorgeous, with ‘embroidered’ images for each episode."
+ },
+ {
+  "outlet": "Irish Examiner",
+  "headline": "Podcast Corner: Tale of Doonmore Hotel on Inishbofin makes for interesting Yarn",
+  "url": "https://www.irishexaminer.com/lifestyle/artsandculture/arid-41626279.html",
+  "quote": "With so many podcasts nowadays aiming for weekly insipid banter, Yarn is a slow, soothing, and rewarding listen."
+ },
+ {
+  "outlet": "Irish Examiner",
+  "headline": "Podcast Corner: A look behind the scenes at serving on an Irish jury",
+  "url": "https://www.irishexaminer.com/lifestyle/artsandculture/arid-40729236.html",
+  "quote": "A 90-minute documentary, it gives listeners a vivid look at serving on a jury."
+ },
+ {
+  "outlet": "Third Coast Festival",
+  "headline": "Re:sound #269 Lefty Disco",
+  "url": "https://thirdcoastfestival.org/feature/lefty-disco"
+ },
+ {
+  "outlet": "Discover Pods",
+  "headline": "Podcast Spotlight: Disability, A Parallel History, a Yarn Miniseries",
+  "url": "https://discoverpods.com/podcast-spotlight-disability-a-parallel-history-a-yarn-miniseries/"
+ },
+ {
+  "outlet": "Irish Central",
+  "headline": "LISTEN: Our top 5 Irish podcasts for February",
+  "url": "https://www.irishcentral.com/culture/entertainment/irish-podcast-recommendation-february"
+ },
+ {
+  "outlet": "Podcasts and Radio",
+  "headline": "7 podcasts about World War II for history lovers",
+  "url": "https://www.podcastandradio.co.uk/best-podcasts-about-world-war-two/",
+  "quote": "The show is all about great storytelling and serious research."
+ },
+ {
+  "outlet": "The Kilkenny People",
+  "headline": "Kilkenny man nominated in National Podcast Awards",
+  "url": "https://www.kilkennypeople.ie/news/home/871705/kilkenny-man-nominated-in-national-podcast-awards.html"
+ },
+ {
+  "outlet": "Signal Awards",
+  "headline": "Winner: Best Indie Podcast, Individual Episode, Bronze 2025",
+  "url": "https://www.signalaward.com/winners/details/#yarn-a-story-podcast/hotel-on-the-edge-of-europe/0/616696"
+ },
+ {
+  "outlet": "Signal Awards",
+  "headline": "Signal Awards unveil 2025 finalists, spotlighting the icons and creators defining culture today",
+  "url": "https://www.signalaward.com/2025/09/22/2025-finalists/"
+ },
+ {
+  "outlet": "Irish Podcast Awards",
+  "headline": "Winner: Best Factual Podcast 2022",
+  "url": "https://www.theirishpodcastawards.ie/enter/winners/"
+ }
 ]

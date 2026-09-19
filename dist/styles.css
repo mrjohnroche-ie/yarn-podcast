@@ -946,3 +946,17 @@ a { color: inherit; }
   color: #cfcaf4;
   -webkit-line-clamp: 3;
 }
+
+.press-quote {
+  display: block;
+  margin-top: 9px;
+  padding-left: 14px;
+  border-left: 2px solid var(--violet-lit);
+  color: var(--paper);
+  font-size: 17px;
+  line-height: 1.45;
+  font-style: italic;
+}
+
+.press-quote::before { content: "\201C"; }
+.press-quote::after { content: "\201D"; }
